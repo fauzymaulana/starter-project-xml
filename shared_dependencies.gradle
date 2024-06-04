@@ -1,0 +1,72 @@
+dependencies {
+    /** Views */
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.google.android.material)
+    implementation(libs.androidx.constraint)
+    implementation(libs.androidx.cardview)
+    implementation(libs.androidx.recycler)
+    implementation(libs.google.android.flexbox)
+    implementation(libs.androidx.fragment.ktx)
+    implementation(libs.androidx.swipe.refresh)
+    implementation(libs.androidx.viewpager2)
+    implementation(libs.shimmer.facebook)
+    implementation(libs.lottie)
+
+    /** Lifecycle */
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.savedstate)
+
+    /** Navigation */
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
+    implementation(libs.navigation.dynamicFeatures.fragment)
+    implementation(libs.navigation.dynamicFeatures.runtime)
+
+    /** Glide */
+    implementation(libs.glide.img)
+    kapt(libs.glide.compiler)
+
+    /** Rerofit + OkHttp */
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.gson.converter)
+    implementation(libs.retrofit.scalars.converter)
+    implementation(libs.okhttp.loging.interceptor)
+    implementation(libs.okhttp)
+
+    /** RxJava2 */
+    implementation(libs.rx.adapter)
+    implementation(libs.rx.java)
+    implementation(libs.rx.android)
+    implementation(libs.rx.kotlin)
+    implementation(libs.rx2.android)
+    implementation(libs.rx2.kotlin)
+
+    /** Google Play */
+    implementation(libs.google.play.core)
+    implementation(libs.google.play.base)
+
+    /** Paging3 */
+    implementation(libs.androidx.paging.common.ktx)
+    implementation(libs.androidx.paging.runtime.ktx)
+    implementation(libs.androidx.paging.rxjava.ktx)
+
+    /** Work Manager */
+    implementation(libs.androidx.workmanager)
+
+//    implementation("com.google.dagger:hilt-android:2.36")
+//    kapt("com.google.dagger:hilt-android-compiler:2.36")
+
+    /** Dagger */
+    implementation("com.google.dagger:hilt-android:2.51.1")
+    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
+    implementation("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
+    kapt("androidx.hilt:hilt-compiler:1.0.0-alpha03")
+
+    /** Test */
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.androidx.test.espresso)
+    androidTestImplementation(libs.androidx.annotation)
+}
