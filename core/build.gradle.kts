@@ -9,6 +9,7 @@ plugins {
     id("androidx.navigation.safeargs")
     id("kotlin-parcelize")
     id("kotlin-kapt")
+    id("kotlin-android")
 }
 
 apply(from = "../shared_dependencies.gradle")
@@ -65,6 +66,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    kapt {
+        correctErrorTypes = true
+    }
 }
 
 dependencies {
@@ -72,6 +76,13 @@ dependencies {
     /** Views */
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
+
+    /** Room DB */
+    api("androidx.room:room-ktx:2.2.5")
+    api("androidx.room:room-runtime:2.2.5")
+    api("androidx.room:room-rxjava2:2.2.5")
+    kapt("androidx.room:room-compiler:2.2.5")
+    androidTestImplementation("androidx.room:room-testing:2.2.5")
 
     /** Test */
     testImplementation(libs.junit)

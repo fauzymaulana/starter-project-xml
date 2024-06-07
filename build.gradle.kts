@@ -9,6 +9,7 @@ buildscript {
         classpath(libs.android.gradlePlugin)
 //        classpath("io.realm:realm-gradle-plugin:10.15.1")
 //        classpath("io.realm.kotlin:gradle-plugin:1.10.2"
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0")
         classpath(libs.navigation.safeArgs.gradlePlugin)
         classpath("com.google.dagger:hilt-android-gradle-plugin:2.51.1")
     }
@@ -19,4 +20,5 @@ plugins {
     alias(libs.plugins.kotlin.kapt) apply false
     alias(libs.plugins.org.jetbrains.kotlin.jvm) apply false
     alias(libs.plugins.android.library) apply false
+    id("com.google.dagger.hilt.android") version "2.51.1" apply false
 }

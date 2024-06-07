@@ -44,7 +44,6 @@ class RequestClient @Inject constructor() {
                 val reqBuilder = request.newBuilder()
                 reqBuilder.header("Accept", C.HEADER_APP_JSON)
                     .header("Content-Type", C.HEADER_APP_JSON)
-                    .header("Content-Type", C.HEADER_APP_JSON)
                     .header("Authorization", "Bearer ${BuildConfig.TOKEN}")
 
                 val response = chain.proceed(reqBuilder.build())

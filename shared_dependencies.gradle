@@ -42,6 +42,7 @@ dependencies {
     implementation(libs.rx.kotlin)
     implementation(libs.rx2.android)
     implementation(libs.rx2.kotlin)
+    implementation("androidx.lifecycle:lifecycle-reactivestreams-ktx:2.2.0")
 
     /** Google Play */
     implementation(libs.google.play.core)
@@ -61,8 +62,12 @@ dependencies {
     /** Dagger */
     implementation("com.google.dagger:hilt-android:2.51.1")
     kapt("com.google.dagger:hilt-android-compiler:2.51.1")
-    implementation("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
+//    implementation("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
     kapt("androidx.hilt:hilt-compiler:1.0.0-alpha03")
+
+    /** Dynamic Feature Navigation */
+    implementation("androidx.navigation:navigation-dynamic-features-fragment:2.5.3")
+    implementation("androidx.navigation:navigation-dynamic-features-runtime:2.5.3")
 
     /** Test */
     testImplementation(libs.junit)

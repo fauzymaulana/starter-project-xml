@@ -70,6 +70,9 @@ android {
         viewBinding = true
         buildConfig = true
     }
+    kapt {
+        correctErrorTypes = true
+    }
 }
 
 dependencies {
@@ -77,6 +80,11 @@ dependencies {
     implementation(project(":core"))
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(libs.androidx.activity)
+//    implementation(libs.legacy.support.v4)
+//    implementation(libs.androidx.lifecycle.livedata.ktx)
+//    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.fragment.ktx)
+
 //    implementation("com.google.dagger:hilt-android:2.36")
 //    kapt("com.google.dagger:hilt-android-compiler:2.36")
 }
