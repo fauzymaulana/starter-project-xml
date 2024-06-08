@@ -4,13 +4,14 @@ import com.papero.capstoneexpert.core.data.source.NetworkBoundResource
 import com.papero.capstoneexpert.core.data.source.local.config.ApiResponse
 import com.papero.capstoneexpert.core.data.source.local.config.LocalDataSource
 import com.papero.capstoneexpert.core.data.source.local.entity.NowPlayingEntityDB
-import com.papero.capstoneexpert.core.data.source.remote.NowPlayingResponse
+import com.papero.capstoneexpert.core.data.source.remote.now_playing.NowPlayingResponse
 import com.papero.capstoneexpert.core.data.source.remote.RemoteDataSource
 import com.papero.capstoneexpert.core.domain.mapper.toListEntity
-import com.papero.capstoneexpert.core.domain.model.NowPlayingEntity
+import com.papero.capstoneexpert.core.domain.model.now_playing.NowPlayingEntity
 import com.papero.capstoneexpert.core.domain.repository.NowPlayingRepository
 import com.papero.capstoneexpert.core.utilities.ResultState
 import io.reactivex.Flowable
+import retrofit2.HttpException
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -28,7 +29,9 @@ class NowPlayingRepositoryImpl @Inject constructor(
             }
 
             override fun createCall(): Flowable<ApiResponse<List<NowPlayingResponse>>> {
-                return remoteDS.getNowPlaying()
+                val call = remoteDS.getNowPlaying()
+                remoteDS.clearDisposable()
+                return call
             }
 
             override fun saveCallResult(data: List<NowPlayingResponse>) {

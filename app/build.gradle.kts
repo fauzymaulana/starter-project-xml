@@ -84,7 +84,7 @@ dependencies {
 //    implementation(libs.androidx.lifecycle.livedata.ktx)
 //    implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.fragment.ktx)
-
-//    implementation("com.google.dagger:hilt-android:2.36")
-//    kapt("com.google.dagger:hilt-android-compiler:2.36")
+    implementation(libs.androidx.paging.common.ktx)
+    implementation(libs.androidx.paging.runtime.ktx)
+    implementation(libs.androidx.paging.rxjava.ktx)
 }

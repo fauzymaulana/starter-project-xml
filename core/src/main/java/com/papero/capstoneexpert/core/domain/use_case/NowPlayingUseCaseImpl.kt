@@ -1,6 +1,6 @@
 package com.papero.capstoneexpert.core.domain.use_case
 
-import com.papero.capstoneexpert.core.domain.model.NowPlayingEntity
+import com.papero.capstoneexpert.core.domain.model.now_playing.NowPlayingEntity
 import com.papero.capstoneexpert.core.domain.repository.NowPlayingRepository
 import com.papero.capstoneexpert.core.domain.use_case_contract.NowPlayingUseCase
 import com.papero.capstoneexpert.core.utilities.ResultState

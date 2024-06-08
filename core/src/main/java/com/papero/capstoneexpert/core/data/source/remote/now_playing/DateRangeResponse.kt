@@ -1,4 +1,4 @@
-package com.papero.capstoneexpert.core.data.source.remote
+package com.papero.capstoneexpert.core.data.source.remote.now_playing
 
 import com.google.gson.annotations.SerializedName
 

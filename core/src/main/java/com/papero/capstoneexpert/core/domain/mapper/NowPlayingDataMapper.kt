@@ -1,8 +1,8 @@
 package com.papero.capstoneexpert.core.domain.mapper
 
 import com.papero.capstoneexpert.core.data.source.local.entity.NowPlayingEntityDB
-import com.papero.capstoneexpert.core.data.source.remote.NowPlayingResponse
-import com.papero.capstoneexpert.core.domain.model.NowPlayingEntity
+import com.papero.capstoneexpert.core.data.source.remote.now_playing.NowPlayingResponse
+import com.papero.capstoneexpert.core.domain.model.now_playing.NowPlayingEntity
 
 fun NowPlayingEntityDB?.toEntity(): NowPlayingEntity {
     return NowPlayingEntity(

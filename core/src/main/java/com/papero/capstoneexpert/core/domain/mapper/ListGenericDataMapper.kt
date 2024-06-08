@@ -1,7 +1,8 @@
 package com.papero.capstoneexpert.core.domain.mapper
 
 import com.papero.capstoneexpert.core.data.source.local.entity.NowPlayingEntityDB
-import com.papero.capstoneexpert.core.data.source.remote.NowPlayingResponse
+import com.papero.capstoneexpert.core.data.source.remote.genre.ItemGenreResponse
+import com.papero.capstoneexpert.core.data.source.remote.now_playing.NowPlayingResponse
 
 fun<T,R> List<T>?.toListEntity(): List<R> {
     val itemList = mutableListOf<R>()
@@ -13,6 +14,10 @@ fun<T,R> List<T>?.toListEntity(): List<R> {
                 }
 
                 is NowPlayingResponse -> {
+                    itemList.add(it.toEntityDB() as R)
+                }
+
+                is ItemGenreResponse -> {
                     itemList.add(it.toEntityDB() as R)
                 }
 //                is Int -> {

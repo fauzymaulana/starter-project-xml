@@ -1,4 +1,4 @@
-package com.papero.capstoneexpert.core.domain.model
+package com.papero.capstoneexpert.core.domain.model.now_playing
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

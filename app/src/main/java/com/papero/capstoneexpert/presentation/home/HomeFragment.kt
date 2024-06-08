@@ -3,14 +3,11 @@ package com.papero.capstoneexpert.presentation.home
 import androidx.fragment.app.viewModels
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.papero.capstoneexpert.R
 import com.papero.capstoneexpert.core.base.BaseFragment
-import com.papero.capstoneexpert.core.domain.mapper.toListEntity
-import com.papero.capstoneexpert.core.domain.model.NowPlayingEntity
+import com.papero.capstoneexpert.core.domain.model.now_playing.NowPlayingEntity
 import com.papero.capstoneexpert.core.utilities.ResultState
 import com.papero.capstoneexpert.core.utilities.observe
 import com.papero.capstoneexpert.databinding.FragmentHomeBinding
@@ -66,6 +63,9 @@ class HomeFragment : BaseFragment() {
 
     override fun onResume() {
         super.onResume()
-        viewModel.getNowPlaying()
+        viewModel.apply {
+            getAllGenre()
+            getNowPlaying()
+        }
     }
 }
