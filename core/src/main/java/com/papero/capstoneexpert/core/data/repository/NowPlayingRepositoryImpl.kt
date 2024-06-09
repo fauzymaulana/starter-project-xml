@@ -4,13 +4,15 @@ import com.papero.capstoneexpert.core.data.source.NetworkBoundResource
 import com.papero.capstoneexpert.core.data.source.local.config.ApiResponse
 import com.papero.capstoneexpert.core.data.source.local.config.LocalDataSource
 import com.papero.capstoneexpert.core.data.source.local.entity.NowPlayingEntityDB
-import com.papero.capstoneexpert.core.data.source.remote.NowPlayingResponse
+import com.papero.capstoneexpert.core.data.source.remote.now_playing.NowPlayingResponse
 import com.papero.capstoneexpert.core.data.source.remote.RemoteDataSource
+import com.papero.capstoneexpert.core.domain.mapper.toEntity
 import com.papero.capstoneexpert.core.domain.mapper.toListEntity
-import com.papero.capstoneexpert.core.domain.model.NowPlayingEntity
+import com.papero.capstoneexpert.core.domain.model.now_playing.NowPlayingEntity
 import com.papero.capstoneexpert.core.domain.repository.NowPlayingRepository
 import com.papero.capstoneexpert.core.utilities.ResultState
 import io.reactivex.Flowable
+import retrofit2.HttpException
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -32,7 +34,19 @@ class NowPlayingRepositoryImpl @Inject constructor(
             }
 
             override fun saveCallResult(data: List<NowPlayingResponse>) {
-                val nowPlayingList = data.toListEntity<NowPlayingResponse, NowPlayingEntityDB>()
+                val temp = mutableListOf<String>()
+                val tempMovie = mutableListOf<NowPlayingEntity>()
+                data.map { nowPlaying ->
+                    nowPlaying.genreIds?.map { id ->
+                        val genre = localDS.getGenreById(id)
+                        temp.add(genre.name)
+                    }
+                    tempMovie.add(
+                        nowPlaying.toEntity(temp)
+                    )
+                }
+                val a = tempMovie.toList()
+                val nowPlayingList = a.toListEntity<NowPlayingEntity, NowPlayingEntityDB>()
                 localDS.insertAllNowPlaying(nowPlayingList)
             }
 

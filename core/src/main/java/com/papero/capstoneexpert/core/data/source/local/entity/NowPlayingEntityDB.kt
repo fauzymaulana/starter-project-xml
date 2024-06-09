@@ -6,13 +6,17 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import javax.annotation.Nonnull
 
 @Entity(tableName = "nowPlayingROOM")
 data class NowPlayingEntityDB(
     @PrimaryKey
-    @NonNull
     @ColumnInfo(name = "id")
     val id:Int,
+
+//    @ColumnInfo(name = "genre_ids")
+//    @NonNull
+//    val genreIds: MutableList<String> = mutableListOf(),
 
     @ColumnInfo(name = "title")
     val title: String,
@@ -24,9 +28,6 @@ data class NowPlayingEntityDB(
     @ColumnInfo(name = "backdrop_path")
     @Nullable
     val backdropPath: String? = null,
-
-//    @ColumnInfo(name = "genre_ids")
-//    val genreIds: List<Int> = emptyList(),
 
     @ColumnInfo(name = "original_language")
     @Nullable

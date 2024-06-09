@@ -1,14 +1,9 @@
 package com.papero.capstoneexpert.core.data.source
 
-import android.annotation.SuppressLint
-import com.bumptech.glide.load.engine.Resource
 import com.papero.capstoneexpert.core.data.source.local.config.ApiResponse
-import com.papero.capstoneexpert.core.data.source.remote.BaseDataSourceMovieResponse
-import com.papero.capstoneexpert.core.data.source.remote.NowPlayingResponse
 import com.papero.capstoneexpert.core.utilities.ResultState
 import io.reactivex.BackpressureStrategy
 import io.reactivex.Flowable
-import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.PublishSubject

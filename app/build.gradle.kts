@@ -16,6 +16,7 @@ apply(from = "../shared_dependencies.gradle")
 
 val localProperties = Properties()
 localProperties.load(FileInputStream(rootProject.file("local.properties")))
+val BASE_URL_IMAGE    = localProperties["BASE_URL_IMAGE"] ?: "Define your Base Url Image"
 val TIMEOUT     = localProperties["TIMEOUT"] ?: 0L
 val BASE_URL    = localProperties["BASE_URL"] ?: "Define your Base Url"
 val API_KEY     = localProperties["API_KEY"] ?: "Define your Api Key"
@@ -39,6 +40,7 @@ android {
         forEach { type ->
             type.buildConfigField("long", "TIMEOUT", TIMEOUT.toString())
             type.buildConfigField("String", "BASE_URL", BASE_URL.toString())
+            type.buildConfigField("String", "BASE_URL_IMAGE", BASE_URL_IMAGE.toString())
             type.buildConfigField("String", "API_KEY", API_KEY.toString())
             type.buildConfigField("String", "TOKEN", TOKEN.toString())
         }
@@ -84,7 +86,10 @@ dependencies {
 //    implementation(libs.androidx.lifecycle.livedata.ktx)
 //    implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.fragment.ktx)
-
-//    implementation("com.google.dagger:hilt-android:2.36")
-//    kapt("com.google.dagger:hilt-android-compiler:2.36")
+    implementation(libs.androidx.paging.common.ktx)
+    implementation(libs.androidx.paging.runtime.ktx)
+    implementation(libs.androidx.paging.rxjava.ktx)
+    implementation(libs.legacy.support.v4)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
 }

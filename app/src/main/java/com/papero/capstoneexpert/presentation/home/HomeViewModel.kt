@@ -2,7 +2,8 @@ package com.papero.capstoneexpert.presentation.home
 
 import androidx.lifecycle.MutableLiveData
 import com.papero.capstoneexpert.core.base.BaseViewModel
-import com.papero.capstoneexpert.core.domain.model.NowPlayingEntity
+import com.papero.capstoneexpert.core.domain.model.now_playing.NowPlayingEntity
+import com.papero.capstoneexpert.core.domain.use_case_contract.GenreUseCase
 import com.papero.capstoneexpert.core.domain.use_case_contract.NowPlayingUseCase
 import com.papero.capstoneexpert.core.utilities.ResultState
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -12,7 +13,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val usecase: NowPlayingUseCase
+    private val usecase: NowPlayingUseCase,
+    private val genreUseCase: GenreUseCase
 ) : BaseViewModel() {
     private val _nowPlaying by lazy { MutableLiveData<ResultState<List<NowPlayingEntity>>>() }
     val nowPlaying get() = _nowPlaying
@@ -38,6 +40,15 @@ class HomeViewModel @Inject constructor(
                     )
                 }
             )
+
+        addDisposable(disposable)
+    }
+
+    fun getAllGenre() {
+        val disposable = genreUseCase.getAllGenre()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe()
 
         addDisposable(disposable)
     }

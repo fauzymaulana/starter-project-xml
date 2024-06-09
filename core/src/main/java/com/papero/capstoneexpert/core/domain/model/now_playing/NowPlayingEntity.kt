@@ -1,4 +1,4 @@
-package com.papero.capstoneexpert.core.domain.model
+package com.papero.capstoneexpert.core.domain.model.now_playing
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
@@ -8,7 +8,7 @@ import kotlinx.parcelize.Parcelize
 data class NowPlayingEntity(
     val adult: Boolean?,
     val backdropPath: String?,
-    val genreIds: List<Int>?,
+    val genreIds: MutableList<String>?,
     val id: Int?,
     val originalLanguage: String?,
     val originalTitle: String?,
