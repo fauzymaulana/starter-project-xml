@@ -28,9 +28,7 @@ class GenreRepositoryImpl @Inject constructor(
             }
 
             override fun createCall(): Flowable<ApiResponse<List<ItemGenreResponse>>> {
-                val genres = remoteDS.getAllGenre()
-                remoteDS.clearDisposable()
-                return genres
+                return remoteDS.getAllGenre()
             }
 
             override fun saveCallResult(data: List<ItemGenreResponse>) {

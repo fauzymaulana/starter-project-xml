@@ -3,6 +3,7 @@ package com.papero.capstoneexpert.core.di
 import android.content.Context
 import androidx.room.Room
 import com.papero.capstoneexpert.core.data.source.local.config.ConfigDatabase
+import com.papero.capstoneexpert.core.data.source.local.dao.GenreDao
 import com.papero.capstoneexpert.core.data.source.local.dao.NowPlayingDao
 import dagger.Module
 import dagger.Provides
@@ -27,5 +28,10 @@ object DatabaseModule {
     @Provides
     fun provideNowPlayingDao(database: ConfigDatabase): NowPlayingDao {
         return database.nowPlayingDao()
+    }
+
+    @Provides
+    fun provideGenreDao(database: ConfigDatabase): GenreDao {
+        return database.genreDao()
     }
 }

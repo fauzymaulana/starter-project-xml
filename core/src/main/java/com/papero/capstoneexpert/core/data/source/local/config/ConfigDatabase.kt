@@ -14,7 +14,7 @@ import com.papero.capstoneexpert.core.data.source.local.entity.NowPlayingEntityD
         GenreEntityDB::class
     ], version = 1, exportSchema = false
 )
-//@TypeConverters(Converters::class)
+@TypeConverters(value = [Converters::class])
 abstract class ConfigDatabase: RoomDatabase()  {
     abstract fun nowPlayingDao(): NowPlayingDao
     abstract fun genreDao(): GenreDao

@@ -32,6 +32,10 @@ class LocalDataSource @Inject constructor(
         return genreDao.getAllGenre()
     }
 
+    fun getGenreById(id: Int):GenreEntityDB {
+        return genreDao.getGenreById(id)
+    }
+
     fun insertAllGenre(genres: List<GenreEntityDB>) {
         genreDao.insertAllGenre(genres)
     }

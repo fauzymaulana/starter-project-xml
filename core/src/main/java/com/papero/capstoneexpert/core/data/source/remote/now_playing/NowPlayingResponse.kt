@@ -10,7 +10,7 @@ data class NowPlayingResponse(
     val backdropPath: String?,
 
     @field:SerializedName("genre_ids")
-    val genreIds: List<Int>?,
+    val genreIds: MutableList<Int>?,
 
     @field:SerializedName("id")
     val id: Int?,

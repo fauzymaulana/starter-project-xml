@@ -6,11 +6,14 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.papero.capstoneexpert.core.base.BaseFragment
 import com.papero.capstoneexpert.core.domain.model.now_playing.NowPlayingEntity
 import com.papero.capstoneexpert.core.utilities.ResultState
 import com.papero.capstoneexpert.core.utilities.observe
 import com.papero.capstoneexpert.databinding.FragmentHomeBinding
+import com.papero.capstoneexpert.presentation.MainActivity
+import com.papero.capstoneexpert.presentation.utilities.OnClickListener
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -35,6 +38,23 @@ class HomeFragment : BaseFragment() {
         observe(viewModel.nowPlaying, ::observeNowPlaying)
     }
 
+    private val nowPlayingAdapter by lazy {
+        MovieAdapter(OnClickListener {
+            it.id?.let { id ->
+
+            }
+        })
+    }
+
+    private fun setupRecycler() {
+        binding.rvNowPlaying.apply {
+            layoutManager = LinearLayoutManager(context)
+            setHasFixedSize(true)
+            adapter = nowPlayingAdapter
+
+        }
+    }
+
     private fun observeNowPlaying(resultState: ResultState<List<NowPlayingEntity>>) {
         when(resultState) {
             is ResultState.BadRequest -> {}
@@ -47,6 +67,8 @@ class HomeFragment : BaseFragment() {
             is ResultState.NoConnection -> {}
             is ResultState.NotFound -> {}
             is ResultState.Success -> {
+                nowPlayingAdapter.submitList(resultState.data)
+                setupRecycler()
                 Log.e("TAG", "observeNowPlaying: ini datanya ${resultState.data?.toList()}", )
             }
             is ResultState.Timeout -> {}
@@ -63,9 +85,14 @@ class HomeFragment : BaseFragment() {
 
     override fun onResume() {
         super.onResume()
+        (requireActivity() as MainActivity).setTitleToolbar("Now Playing", false)
         viewModel.apply {
-            getAllGenre()
             getNowPlaying()
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        viewModel.getAllGenre()
     }
 }

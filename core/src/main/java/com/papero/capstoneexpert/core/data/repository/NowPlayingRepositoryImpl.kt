@@ -6,6 +6,7 @@ import com.papero.capstoneexpert.core.data.source.local.config.LocalDataSource
 import com.papero.capstoneexpert.core.data.source.local.entity.NowPlayingEntityDB
 import com.papero.capstoneexpert.core.data.source.remote.now_playing.NowPlayingResponse
 import com.papero.capstoneexpert.core.data.source.remote.RemoteDataSource
+import com.papero.capstoneexpert.core.domain.mapper.toEntity
 import com.papero.capstoneexpert.core.domain.mapper.toListEntity
 import com.papero.capstoneexpert.core.domain.model.now_playing.NowPlayingEntity
 import com.papero.capstoneexpert.core.domain.repository.NowPlayingRepository
@@ -29,13 +30,23 @@ class NowPlayingRepositoryImpl @Inject constructor(
             }
 
             override fun createCall(): Flowable<ApiResponse<List<NowPlayingResponse>>> {
-                val call = remoteDS.getNowPlaying()
-                remoteDS.clearDisposable()
-                return call
+                return remoteDS.getNowPlaying()
             }
 
             override fun saveCallResult(data: List<NowPlayingResponse>) {
-                val nowPlayingList = data.toListEntity<NowPlayingResponse, NowPlayingEntityDB>()
+                val temp = mutableListOf<String>()
+                val tempMovie = mutableListOf<NowPlayingEntity>()
+                data.map { nowPlaying ->
+                    nowPlaying.genreIds?.map { id ->
+                        val genre = localDS.getGenreById(id)
+                        temp.add(genre.name)
+                    }
+                    tempMovie.add(
+                        nowPlaying.toEntity(temp)
+                    )
+                }
+                val a = tempMovie.toList()
+                val nowPlayingList = a.toListEntity<NowPlayingEntity, NowPlayingEntityDB>()
                 localDS.insertAllNowPlaying(nowPlayingList)
             }
 
