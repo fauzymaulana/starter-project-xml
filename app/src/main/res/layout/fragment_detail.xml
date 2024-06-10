@@ -1,13 +1,290 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detai_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.detail.DetailFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+<!--    <androidx.core.widget.NestedScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
 
-</FrameLayout>
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent">-->
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.55" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_thumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/ill_thumbnail_empty"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/guideline"/>
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/pb_thumbnail"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        app:indicatorColor="@color/purple"
+        app:layout_constraintStart_toStartOf="@id/iv_thumbnail"
+        app:layout_constraintEnd_toEndOf="@id/iv_thumbnail"
+        app:layout_constraintTop_toTopOf="@id/iv_thumbnail"
+        app:layout_constraintBottom_toBottomOf="@id/iv_thumbnail"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/gradient_linear_white_transparent"
+                app:layout_constraintBottom_toBottomOf="@id/iv_thumbnail"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="30dp"
+        android:layout_marginTop="-12dp"
+        app:layout_constraintTop_toBottomOf="@id/iv_thumbnail">
+        
+        <TextView
+            android:id="@+id/tag_adult"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            tools:text="18+"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:paddingBottom="2dp"
+            android:background="@drawable/bg_tag_adult"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/txt_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:drawableStart="@drawable/ic_star"
+            android:textAlignment="center"
+            android:drawablePadding="4dp"
+            android:drawableTint="@color/yellow"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            tools:text="7.54"
+            app:layout_constraintStart_toEndOf="@id/tag_adult"
+            app:layout_constraintTop_toTopOf="@id/tag_adult"
+            app:layout_constraintBottom_toBottomOf="@id/tag_adult"/>
+
+        <TextView
+            android:id="@+id/txt_reviews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            tools:text="(12K reviews)"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@id/txt_rating"
+            app:layout_constraintTop_toTopOf="@id/txt_rating"
+            app:layout_constraintBottom_toBottomOf="@id/txt_rating"/>
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="21sp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            tools:text="Bad Boy The Super Mario Bros. Movie"
+            app:layout_constraintTop_toBottomOf="@id/txt_rating"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_attribute"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.34" />
+
+        <TextView
+            android:id="@+id/label_popularity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Popularitas"
+            android:layout_marginTop="20dp"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/txt_title"
+            app:layout_constraintEnd_toStartOf="@id/guideline_attribute"
+            app:layout_constraintTop_toBottomOf="@id/txt_title"/>
+
+        <TextView
+            android:id="@+id/txt_popularity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            tools:text="12 Maret 2023"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@id/guideline_attribute"
+            app:layout_constraintTop_toTopOf="@id/label_popularity"
+            app:layout_constraintBottom_toBottomOf="@id/label_popularity"/>
+
+        <TextView
+            android:id="@+id/label_release"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Tanggal rilis"
+            android:layout_marginTop="4dp"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/label_popularity"
+            app:layout_constraintEnd_toStartOf="@id/guideline_attribute"
+            app:layout_constraintTop_toBottomOf="@id/label_popularity"/>
+
+        <TextView
+            android:id="@+id/txt_release"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            tools:text="12 Maret 2023"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@id/guideline_attribute"
+            app:layout_constraintTop_toTopOf="@id/label_release"
+            app:layout_constraintBottom_toBottomOf="@id/label_release"/>
+
+        <TextView
+            android:id="@+id/label_laman"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textSize="14sp"
+            android:visibility="gone"
+            android:text="Informasi laman"
+            app:layout_constraintTop_toBottomOf="@id/label_release"
+            app:layout_constraintStart_toStartOf="@id/label_release"
+            app:layout_constraintEnd_toStartOf="@id/guideline_attribute"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            app:layout_constraintTop_toTopOf="@id/label_popularity"
+            app:layout_constraintBottom_toBottomOf="@id/label_popularity"
+            app:layout_constraintStart_toStartOf="@id/guideline_attribute"
+            app:layout_constraintEnd_toEndOf="@id/guideline_attribute"
+            android:text=":"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            app:layout_constraintTop_toTopOf="@id/label_release"
+            app:layout_constraintBottom_toBottomOf="@id/label_release"
+            app:layout_constraintStart_toStartOf="@id/guideline_attribute"
+            app:layout_constraintEnd_toEndOf="@id/guideline_attribute"
+            android:text=":"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="@id/label_laman"
+            app:layout_constraintBottom_toBottomOf="@id/label_laman"
+            app:layout_constraintStart_toStartOf="@id/guideline_attribute"
+            app:layout_constraintEnd_toEndOf="@id/guideline_attribute"
+            android:text=":"
+            />
+
+        <TextView
+            android:id="@+id/txt_web_page"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            tools:text="12 Maret 2023"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@id/guideline_attribute"
+            app:layout_constraintTop_toTopOf="@id/label_laman"
+            app:layout_constraintBottom_toBottomOf="@id/label_laman"/>
+
+        <TextView
+            android:id="@+id/txt_overview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            tools:text="After their late former Captain is framed, Lowrey and Burnett try to clear his name, only to end up on the run themselves."
+            app:layout_constraintTop_toBottomOf="@id/label_laman"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fab"
+        android:contentDescription="Sukai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:padding="5dp"
+        app:icon="@drawable/ic_favorite_outline"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--    </androidx.core.widget.NestedScrollView>-->
+
+<!--    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout-->
+<!--        android:id="@+id/swipe_refresh"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+
+<!--        <androidx.core.widget.NestedScrollView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent">-->
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent">-->
+
+<!--                <androidx.constraintlayout.widget.Guideline-->
+<!--                    android:id="@+id/guideline"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    app:layout_constraintGuide_percent="0.35" />-->
+
+<!--                <com.google.android.material.imageview.ShapeableImageView-->
+<!--                    android:id="@+id/iv_thumbnail"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="0dp"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@id/guideline"/>-->
+
+<!--                <View-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background="@drawable/gradient_linear_white_black"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@id/iv_thumbnail"/>-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--        </androidx.core.widget.NestedScrollView>-->
+
+<!--    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

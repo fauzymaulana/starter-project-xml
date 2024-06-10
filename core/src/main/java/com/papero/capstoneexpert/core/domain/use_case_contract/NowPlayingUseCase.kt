@@ -6,4 +6,6 @@ import io.reactivex.Flowable
 
 interface NowPlayingUseCase {
     fun getAllNowPlaying(): Flowable<ResultState<List<NowPlayingEntity>>>
+
+    fun getNowPlayingById(id: Int): Flowable<ResultState<NowPlayingEntity>>
 }

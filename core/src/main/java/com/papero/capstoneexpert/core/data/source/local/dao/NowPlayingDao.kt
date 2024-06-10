@@ -18,4 +18,6 @@ interface NowPlayingDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAllNowPlaying(nowPlayings: List<NowPlayingEntityDB>)
+
+
 }

@@ -1,5 +1,6 @@
 package com.papero.capstoneexpert.core.data.repository
 
+import android.util.Log
 import com.papero.capstoneexpert.core.data.source.NetworkBoundResource
 import com.papero.capstoneexpert.core.data.source.local.config.ApiResponse
 import com.papero.capstoneexpert.core.data.source.local.config.LocalDataSource
@@ -7,6 +8,7 @@ import com.papero.capstoneexpert.core.data.source.local.entity.NowPlayingEntityD
 import com.papero.capstoneexpert.core.data.source.remote.now_playing.NowPlayingResponse
 import com.papero.capstoneexpert.core.data.source.remote.RemoteDataSource
 import com.papero.capstoneexpert.core.domain.mapper.toEntity
+import com.papero.capstoneexpert.core.domain.mapper.toEntityDB
 import com.papero.capstoneexpert.core.domain.mapper.toListEntity
 import com.papero.capstoneexpert.core.domain.model.now_playing.NowPlayingEntity
 import com.papero.capstoneexpert.core.domain.repository.NowPlayingRepository
@@ -39,11 +41,14 @@ class NowPlayingRepositoryImpl @Inject constructor(
                 data.map { nowPlaying ->
                     nowPlaying.genreIds?.map { id ->
                         val genre = localDS.getGenreById(id)
-                        temp.add(genre.name)
+                        Log.e("TAG", "saveCallResult: data $genre", )
+//                        temp.add(genre.name)
                     }
                     tempMovie.add(
                         nowPlaying.toEntity(temp)
                     )
+
+                    Log.e("====", "saveCallResult: now play ${tempMovie.toList()}", )
                 }
                 val a = tempMovie.toList()
                 val nowPlayingList = a.toListEntity<NowPlayingEntity, NowPlayingEntityDB>()
@@ -51,6 +56,28 @@ class NowPlayingRepositoryImpl @Inject constructor(
             }
 
             override fun shouldFetch(data: List<NowPlayingEntity>?): Boolean {
+                return true
+            }
+        }
+        return result.asFlowable()
+    }
+
+    override fun getNowPlayingById(id: Int): Flowable<ResultState<NowPlayingEntity>> {
+        val result = object :NetworkBoundResource<NowPlayingEntity, NowPlayingResponse>() {
+            override fun loadFromDB(): Flowable<NowPlayingEntity> {
+                return localDS.getNowPlayingById(id)
+                    .map { it.toEntity() }
+            }
+
+            override fun createCall(): Flowable<ApiResponse<NowPlayingResponse>> {
+                return remoteDS.getMovieById(id)
+            }
+
+            override fun saveCallResult(data: NowPlayingResponse) {
+                val nowPlaying = data.toEntityDB()
+            }
+
+            override fun shouldFetch(data: NowPlayingEntity?): Boolean {
                 return true
             }
         }

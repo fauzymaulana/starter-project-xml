@@ -33,5 +33,6 @@ class FavoriteFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         (requireActivity() as MainActivity).setTitleToolbar("Local Movie", false)
+        (requireActivity() as MainActivity).showBottomNavigation(true)
     }
 }

@@ -1,6 +1,7 @@
 package com.papero.capstoneexpert.presentation
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
@@ -36,5 +37,9 @@ class MainActivity : BaseActivity() {
         binding.toolbar.title = title ?: "Movie"
 //        supportActionBar?.setDisplayHomeAsUpEnabled(showBackIcon)
         binding.toolbar.navigationIcon = if (showBackIcon) ResourcesCompat.getDrawable(resources, R.drawable.ic_arrow_back, null) else null
+    }
+
+    fun showBottomNavigation(show: Boolean) {
+        binding.bottomNavigation.visibility = if (show) View.VISIBLE else View.GONE
     }
 }

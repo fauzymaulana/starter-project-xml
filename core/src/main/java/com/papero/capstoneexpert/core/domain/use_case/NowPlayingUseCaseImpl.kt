@@ -15,4 +15,9 @@ class NowPlayingUseCaseImpl @Inject constructor(
         return repository.getAllNowPlaying()
             .subscribeOn(Schedulers.io())
     }
+
+    override fun getNowPlayingById(id: Int): Flowable<ResultState<NowPlayingEntity>> {
+        return repository.getNowPlayingById(id)
+            .subscribeOn(Schedulers.io())
+    }
 }
