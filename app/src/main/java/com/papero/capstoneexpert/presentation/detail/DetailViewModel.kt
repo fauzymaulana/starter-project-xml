@@ -49,4 +49,8 @@ class DetailViewModel @Inject constructor(
 
         addDisposable(disposable)
     }
+
+    fun addFavorite() {
+//        val disposable = nowPlayingUsecase.
+    }
 }

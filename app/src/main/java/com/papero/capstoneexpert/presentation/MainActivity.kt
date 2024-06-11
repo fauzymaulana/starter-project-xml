@@ -7,8 +7,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupWithNavController
 import com.papero.capstoneexpert.R
 import com.papero.capstoneexpert.core.base.BaseActivity
@@ -19,6 +21,9 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : BaseActivity() {
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding!!
+
+    private lateinit var appbarConfiguration: AppBarConfiguration
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -28,7 +33,7 @@ class MainActivity : BaseActivity() {
 
         val navHostFragment     = supportFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment
         val navController       = navHostFragment.navController
-        val appbarConfiguration = AppBarConfiguration(navController.graph)
+        appbarConfiguration = AppBarConfiguration(navController.graph)
         binding.toolbar.setupWithNavController(navController, appbarConfiguration)
         binding.bottomNavigation.setupWithNavController(navController)
     }
@@ -41,5 +46,9 @@ class MainActivity : BaseActivity() {
 
     fun showBottomNavigation(show: Boolean) {
         binding.bottomNavigation.visibility = if (show) View.VISIBLE else View.GONE
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return findNavController(R.id.fragment_container).navigateUp(appbarConfiguration)
     }
 }

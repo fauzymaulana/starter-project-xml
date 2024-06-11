@@ -6,7 +6,7 @@
         android:icon="@drawable/state_icon_movie_bottom_nav"
         android:title="Movie"/>
     <item
-        android:id="@+id/favoriteFragment"
+        android:id="@id/favoriteGraph"
         android:enabled="true"
         android:icon="@drawable/state_icon_favorite_bottom_nav"
         android:title="Favorite"/>

@@ -179,6 +179,7 @@ class DetailFragment : BaseFragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v?.id) {
             binding.fab.id -> {
+                viewModel.addFavorite()
                 Toast.makeText(context, "Ini Di Klik", Toast.LENGTH_SHORT).show()
             }
         }

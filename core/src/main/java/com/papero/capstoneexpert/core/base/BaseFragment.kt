@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import androidx.activity.OnBackPressedCallback
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
 import com.facebook.shimmer.ShimmerFrameLayout
@@ -62,9 +63,7 @@ abstract class BaseFragment: Fragment() {
         val snackMessage = message ?: "Something went wrong"
         val snackBar = Snackbar.make(requireView(), snackMessage, Snackbar.LENGTH_LONG)
             .setBackgroundTint(
-                resources.getColor(
-                    color ?: com.google.android.material.R.color.m3_ref_palette_neutral20
-                )
+                ResourcesCompat.getColor(resources, color ?: com.google.android.material.R.color.m3_ref_palette_neutral20, null)
             )
             .setActionTextColor(
                 resources.getColor(com.google.android.material.R.color.m3_chip_text_color, null)

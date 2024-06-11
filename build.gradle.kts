@@ -21,4 +21,5 @@ plugins {
     alias(libs.plugins.org.jetbrains.kotlin.jvm) apply false
     alias(libs.plugins.android.library) apply false
     id("com.google.dagger.hilt.android") version "2.51.1" apply false
+    alias(libs.plugins.android.dynamic.feature) apply false
 }

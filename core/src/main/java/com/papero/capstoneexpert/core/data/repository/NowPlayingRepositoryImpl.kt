@@ -74,7 +74,8 @@ class NowPlayingRepositoryImpl @Inject constructor(
             }
 
             override fun saveCallResult(data: NowPlayingResponse) {
-                val nowPlaying = data.toEntityDB()
+//                val nowPlaying = data.toEntityDB()
+                data.toEntityDB()
             }
 
             override fun shouldFetch(data: NowPlayingEntity?): Boolean {

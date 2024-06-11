@@ -26,8 +26,10 @@
             app:argType="integer"
             android:defaultValue="1" />
     </fragment>
-    <fragment
-        android:id="@+id/favoriteFragment"
-        android:name="com.papero.capstoneexpert.presentation.favorite.FavoriteFragment"
-        tools:layout="@layout/fragment_favorite" />
+
+    <include-dynamic
+        android:id="@+id/favoriteGraph"
+        app:moduleName="favorite"
+        app:graphResName="favorite_nav_graph" />
+
 </navigation>

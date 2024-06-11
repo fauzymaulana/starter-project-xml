@@ -1,4 +1,4 @@
-package com.papero.capstoneexpert.presentation.favorite
+package com.papero.capstoneexpert.favorite.presentation
 
 import androidx.fragment.app.viewModels
 import android.os.Bundle
@@ -6,14 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.papero.capstoneexpert.R
+import com.papero.capstoneexpert.core.base.BaseFragment
+import com.papero.capstoneexpert.favorite.R
 import com.papero.capstoneexpert.presentation.MainActivity
 
-class FavoriteFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = FavoriteFragment()
-    }
+class FavoriteFragment : BaseFragment() {
 
     private val viewModel: FavoriteViewModel by viewModels()
 
