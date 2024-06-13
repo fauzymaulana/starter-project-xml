@@ -1,5 +1,6 @@
 package com.papero.capstoneexpert.core.domain.mapper
 
+import com.papero.capstoneexpert.core.data.source.local.entity.FavoriteEntityDB
 import com.papero.capstoneexpert.core.data.source.local.entity.NowPlayingEntityDB
 import com.papero.capstoneexpert.core.data.source.remote.genre.ItemGenreResponse
 import com.papero.capstoneexpert.core.data.source.remote.now_playing.NowPlayingResponse
@@ -25,6 +26,10 @@ fun<T,R> List<T>?.toListEntity(): List<R> {
                 is ItemGenreResponse -> {
                     itemList.add(it.toEntityDB() as R)
                 }
+                is FavoriteEntityDB -> {
+                    itemList.add(it.toEntity() as R)
+                }
+
 //                is Int -> {
 //                    itemList.add(it as Int)
 //                }

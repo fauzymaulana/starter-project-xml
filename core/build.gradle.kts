@@ -80,5 +80,6 @@ dependencies {
     api("androidx.room:room-runtime:2.2.5")
     api("androidx.room:room-rxjava2:2.2.5")
     kapt("androidx.room:room-compiler:2.2.5")
+    annotationProcessor("androidx.room:room-compiler:2.2.5")
     androidTestImplementation("androidx.room:room-testing:2.2.5")
 }

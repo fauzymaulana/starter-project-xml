@@ -2,6 +2,7 @@ package com.papero.capstoneexpert.presentation.detail
 
 import androidx.fragment.app.viewModels
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.papero.capstoneexpert.R
 import com.papero.capstoneexpert.core.base.BaseFragment
+import com.papero.capstoneexpert.core.domain.model.favorite.FavoriteEntity
 import com.papero.capstoneexpert.core.domain.model.now_playing.NowPlayingEntity
 import com.papero.capstoneexpert.core.ui.countRound
 import com.papero.capstoneexpert.core.ui.loadImageWithProgressBar
@@ -28,6 +30,7 @@ class DetailFragment : BaseFragment(), View.OnClickListener {
     private val viewModel: DetailViewModel by viewModels()
     private var _binding: FragmentDetailBinding? = null
     private val binding get() = _binding!!
+    private var detailMovie: NowPlayingEntity? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,6 +54,31 @@ class DetailFragment : BaseFragment(), View.OnClickListener {
         setInsetsScreen(binding.detaiRoot)
         initListeners()
         observe(viewModel.movie, ::observeMovieDetail)
+        observe(viewModel.favorite, ::observeFindFavorite)
+    }
+
+    private fun observeFindFavorite(resultState: ResultState<FavoriteEntity?>) {
+        when(resultState) {
+            is ResultState.BadRequest -> {}
+            is ResultState.Conflict -> {}
+            is ResultState.Forbidden -> {}
+            is ResultState.HideLoading -> {}
+            is ResultState.Loading -> {}
+            is ResultState.NoConnection -> {}
+            is ResultState.NotFound -> {}
+            is ResultState.Success -> {
+                val data = resultState.data
+                if (data == null) {
+                    detailMovie?.let { viewModel.addFavorite(it) }
+                    Log.e("TAG", "observeFindFavorite: datanya kosong", )
+                } else {
+                    Log.e("TAG", "observeFindFavorite: datanya ada ${data.toString()}", )
+                }
+            }
+            is ResultState.Timeout -> {}
+            is ResultState.Unauthorized -> {}
+            is ResultState.UnknownError -> {}
+        }
     }
 
     fun setInsetsScreen(viewId: ConstraintLayout) {
@@ -85,6 +113,7 @@ class DetailFragment : BaseFragment(), View.OnClickListener {
             is ResultState.Success -> {
                 val data = resultState.data
                 data?.let { e ->
+                    detailMovie = e
                     setContentImage(e.posterPath)
                     setTagAdult(e.adult)
                     setRating(e.voteAverage)
@@ -179,7 +208,8 @@ class DetailFragment : BaseFragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v?.id) {
             binding.fab.id -> {
-                viewModel.addFavorite()
+                viewModel.getFavoriteById()
+//                detailMovie?.let { viewModel.addFavorite(it) }
                 Toast.makeText(context, "Ini Di Klik", Toast.LENGTH_SHORT).show()
             }
         }

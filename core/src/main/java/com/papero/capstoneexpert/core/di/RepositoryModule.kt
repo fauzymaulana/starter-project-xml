@@ -1,7 +1,9 @@
 package com.papero.capstoneexpert.core.di
 
+import com.papero.capstoneexpert.core.data.repository.FavoriteRepositoryImpl
 import com.papero.capstoneexpert.core.data.repository.GenreRepositoryImpl
 import com.papero.capstoneexpert.core.data.repository.NowPlayingRepositoryImpl
+import com.papero.capstoneexpert.core.domain.repository.FavoriteRepository
 import com.papero.capstoneexpert.core.domain.repository.GenreRepository
 import com.papero.capstoneexpert.core.domain.repository.NowPlayingRepository
 import dagger.Binds
@@ -17,4 +19,7 @@ abstract class RepositoryModule {
 
     @Binds
     abstract fun provideGenreRepository(genreRepository: GenreRepositoryImpl): GenreRepository
+
+    @Binds
+    abstract fun provideFavoriteRepository(repository: FavoriteRepositoryImpl): FavoriteRepository
 }

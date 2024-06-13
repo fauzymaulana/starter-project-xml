@@ -12,12 +12,16 @@ import com.papero.capstoneexpert.databinding.ItemNowPlayingLayoutBinding
 
 class NowPlayingViewHolder(private val binding: ItemNowPlayingLayoutBinding): RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(movie: NowPlayingEntity) {
-        binding.apply {
-            ivThumbnail.loadImageWithProgressBar(movie.backdropPath, binding.progressBar)
-            txtTitle.text = movie.title
-            txtRating.text = countRound(movie.voteAverage)
-            txtGenre.text = "Action"
+    fun <T>bind(movie: T) {
+        when(movie) {
+            is NowPlayingEntity -> {
+                binding.apply {
+                    ivThumbnail.loadImageWithProgressBar(movie.backdropPath, binding.progressBar)
+                    txtTitle.text = movie.title
+                    txtRating.text = countRound(movie.voteAverage)
+                    txtGenre.text = "Action"
+                }
+            }
         }
     }
 

@@ -30,6 +30,14 @@
     <include-dynamic
         android:id="@+id/favoriteGraph"
         app:moduleName="favorite"
-        app:graphResName="favorite_nav_graph" />
+        app:graphResName="favorite_nav_graph" >
+        <action
+            android:id="@+id/action_favorite_to_detail"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/back_slide_in_left"
+            app:popExitAnim="@anim/back_slide_out_right"/>
+    </include-dynamic>
 
 </navigation>

@@ -41,7 +41,7 @@ class HomeFragment : BaseFragment() {
     }
 
     private val nowPlayingAdapter by lazy {
-        MovieAdapter(OnClickListener {
+        MovieAdapter<NowPlayingEntity>(OnClickListener {
             it.id?.let { id ->
                 moveToDetail(id)
             }

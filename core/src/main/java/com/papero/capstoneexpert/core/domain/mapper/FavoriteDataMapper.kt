@@ -1,12 +1,11 @@
 package com.papero.capstoneexpert.core.domain.mapper
 
-import com.papero.capstoneexpert.core.data.source.local.entity.NowPlayingEntityDB
-import com.papero.capstoneexpert.core.data.source.remote.now_playing.NowPlayingResponse
+import com.papero.capstoneexpert.core.data.source.local.entity.FavoriteEntityDB
 import com.papero.capstoneexpert.core.domain.model.favorite.FavoriteEntity
 import com.papero.capstoneexpert.core.domain.model.now_playing.NowPlayingEntity
 
-fun NowPlayingEntityDB?.toEntity(): NowPlayingEntity {
-    return NowPlayingEntity(
+fun FavoriteEntityDB?.toEntity(): FavoriteEntity {
+    return FavoriteEntity(
         id = this?.id,
         title = this?.title,
         releaseDate = this?.releaseDate,
@@ -23,8 +22,8 @@ fun NowPlayingEntityDB?.toEntity(): NowPlayingEntity {
     )
 }
 
-fun NowPlayingResponse?.toEntityDB(): NowPlayingEntityDB {
-    return NowPlayingEntityDB(
+fun FavoriteEntity?.toEntityDB(): FavoriteEntityDB {
+    return FavoriteEntityDB(
         id = this?.id ?: 0,
         title = this?.title ?: "",
         releaseDate = this?.releaseDate,
@@ -33,7 +32,6 @@ fun NowPlayingResponse?.toEntityDB(): NowPlayingEntityDB {
         overview = this?.overview,
         originalTitle = this?.originalTitle,
         originalLanguage = this?.originalLanguage,
-//        genreIds = this?.genreIds?.map { it.toString() }?.toMutableList(),
         backdropPath = this?.backdropPath,
         posterPath = this?.posterPath,
         adult = this?.adult,
@@ -41,43 +39,8 @@ fun NowPlayingResponse?.toEntityDB(): NowPlayingEntityDB {
     )
 }
 
-fun NowPlayingResponse?.toEntity(listGenre: List<String>): NowPlayingEntity {
+fun FavoriteEntity?.toNowPlayingEntity(): NowPlayingEntity {
     return NowPlayingEntity(
-        id = this?.id,
-        title = this?.title,
-        releaseDate = this?.releaseDate,
-        voteAverage = this?.voteAverage,
-        popularity = this?.popularity,
-        overview = this?.overview,
-        originalTitle = this?.originalTitle,
-        originalLanguage = this?.originalLanguage,
-        genreIds = listGenre.toMutableList(),
-        backdropPath = this?.backdropPath,
-        posterPath = this?.posterPath,
-        adult = this?.adult,
-        voteCount = this?.voteCount
-    )
-}
-
-fun NowPlayingEntity?.toEntityDB(): NowPlayingEntityDB {
-    return NowPlayingEntityDB(
-        id = this?.id ?: 0,
-        title = this?.title ?: "",
-        releaseDate = this?.releaseDate,
-        voteAverage = this?.voteAverage,
-        popularity = this?.popularity,
-        overview = this?.overview,
-        originalTitle = this?.originalTitle,
-        originalLanguage = this?.originalLanguage,
-        backdropPath = this?.backdropPath,
-        posterPath = this?.posterPath,
-        adult = this?.adult,
-        voteCount = this?.voteCount
-    )
-}
-
-fun NowPlayingEntity?.toFavoriteEntity(): FavoriteEntity {
-    return FavoriteEntity(
         id = this?.id ?: 0,
         title = this?.title ?: "",
         releaseDate = this?.releaseDate,

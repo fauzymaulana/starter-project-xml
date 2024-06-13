@@ -1,7 +1,9 @@
 package com.papero.capstoneexpert.di
 
+import com.papero.capstoneexpert.core.domain.use_case.FavoriteUseCaseImpl
 import com.papero.capstoneexpert.core.domain.use_case.GenreUseCaseImpl
 import com.papero.capstoneexpert.core.domain.use_case.NowPlayingUseCaseImpl
+import com.papero.capstoneexpert.core.domain.use_case_contract.FavoriteUseCase
 import com.papero.capstoneexpert.core.domain.use_case_contract.GenreUseCase
 import com.papero.capstoneexpert.core.domain.use_case_contract.NowPlayingUseCase
 import dagger.Binds
@@ -21,4 +23,8 @@ abstract class AppModule {
     @Binds
     @Singleton
     abstract fun provideGenreUsecase(usecase: GenreUseCaseImpl): GenreUseCase
+
+    @Binds
+    @Singleton
+    abstract fun provideFavoriteUseCase(favoriteUseCase: FavoriteUseCaseImpl): FavoriteUseCase
 }
