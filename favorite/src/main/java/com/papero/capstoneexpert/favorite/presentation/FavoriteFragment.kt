@@ -23,21 +23,24 @@ import dagger.hilt.android.AndroidEntryPoint
 class FavoriteFragment : BaseFragment() {
 
     private val viewModel: FavoriteViewModel by viewModels()
-    private var _binding: FragmentFavoriteBinding? = null
-    private val binding = _binding!!
+//    private var _binding: FragmentFavoriteBinding? = null
+//    private val binding = _binding!!
 
-
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentFavoriteBinding.inflate(layoutInflater, container, false)
-        return binding.root
+        return inflater.inflate(R.layout.fragment_favorite, container, false)
+//        _binding = FragmentFavoriteBinding.inflate(layoutInflater, container, false)
+//        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        observe(viewModel.favoriteList, ::observeFavoriteList)
+//        observe(viewModel.favoriteList, ::observeFavoriteList)
     }
 
     private val favoriteAdapter by lazy {
@@ -61,7 +64,7 @@ class FavoriteFragment : BaseFragment() {
                     message = resultState.message.toString(),
                     actionMessage = "Muat Ulang"
                 ) {
-                    viewModel.getAllFavorite()
+//                    viewModel.getAllFavorite()
                 }
             }
             is ResultState.NotFound -> {}

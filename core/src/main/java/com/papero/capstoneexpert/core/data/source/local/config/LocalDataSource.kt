@@ -50,11 +50,11 @@ class LocalDataSource @Inject constructor(
         return favoriteDao.getAllFavorite()
     }
 
-    fun insertNowPlaying(e: FavoriteEntityDB): Single<Long> {
+    fun insertNowPlaying(e: FavoriteEntityDB): Long {
         return favoriteDao.insertFavorite(e)
     }
 
-    fun getFavorite(id: Int): Flowable<FavoriteEntityDB?> {
+    fun getFavorite(id: Int): FavoriteEntityDB? {
         return favoriteDao.getFavorite(id)
     }
 

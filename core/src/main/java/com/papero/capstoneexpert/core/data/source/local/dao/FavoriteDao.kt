@@ -17,10 +17,10 @@ interface FavoriteDao {
     fun getAllFavorite(): Flowable<List<FavoriteEntityDB>>
 
     @Query("SELECT * FROM favoriteROOM WHERE id = :id")
-    fun getFavorite(id: Int): Flowable<FavoriteEntityDB?>
+    fun getFavorite(id: Int): FavoriteEntityDB?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertFavorite(movie: FavoriteEntityDB): Single<Long>
+    fun insertFavorite(movie: FavoriteEntityDB): Long
 
 //    @Delete
 //    fun deleteFavorite(id: Int)

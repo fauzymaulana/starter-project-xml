@@ -11,7 +11,7 @@ interface FavoriteRepository {
 
     fun insertFavorite(entity: FavoriteEntity): Single<Long>
 
-    fun getFavorite(id: Int): Flowable<FavoriteEntity?>
+    fun getFavorite(id: Int): Single<Boolean>
 
-//    fun deleteFavorite(id: Int)
+//    fun deleteFavorite(id: Int): Single<Unit>
 }

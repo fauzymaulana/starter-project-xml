@@ -12,35 +12,35 @@ import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 @HiltViewModel
-class FavoriteViewModel @Inject constructor(
-    private val favoriteUsecase: FavoriteUseCase
+class FavoriteViewModel @Inject constructor (
+//    private val favoriteUsecase: FavoriteUseCase
 ) : BaseViewModel() {
 
-    private val _favoriteList by lazy { MutableLiveData<ResultState<List<FavoriteEntity>>>() }
-    val favoriteList get() = _favoriteList
-
-    fun getAllFavorite() {
-        val disposable = favoriteUsecase.getAllFavorite()
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .doOnSubscribe {
-                _favoriteList.value = ResultState.Loading()
-            }
-            .subscribe(
-                { res ->
-                    _favoriteList.value = ResultState.HideLoading()
-                    _favoriteList.value = res
-                },
-                { err ->
-                    _favoriteList.value = ResultState.HideLoading()
-                    _favoriteList.value = ResultState.UnknownError(
-                        message = err.message.toString(),
-                        data = null,
-                        code = 0
-                    )
-                }
-            )
-
-        addDisposable(disposable)
-    }
+//    private val _favoriteList by lazy { MutableLiveData<ResultState<List<FavoriteEntity>>>() }
+//    val favoriteList get() = _favoriteList
+//
+//    fun getAllFavorite() {
+//        val disposable = favoriteUsecase.getAllFavorite()
+//            .subscribeOn(Schedulers.io())
+//            .observeOn(AndroidSchedulers.mainThread())
+//            .doOnSubscribe {
+//                _favoriteList.value = ResultState.Loading()
+//            }
+//            .subscribe(
+//                { res ->
+//                    _favoriteList.value = ResultState.HideLoading()
+//                    _favoriteList.value = res
+//                },
+//                { err ->
+//                    _favoriteList.value = ResultState.HideLoading()
+//                    _favoriteList.value = ResultState.UnknownError(
+//                        message = err.message.toString(),
+//                        data = null,
+//                        code = 0
+//                    )
+//                }
+//            )
+//
+//        addDisposable(disposable)
+//    }
 }

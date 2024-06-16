@@ -12,7 +12,7 @@ interface FavoriteUseCase {
 
     fun insertFavorite(e: FavoriteEntity): Single<ResultState<Long>>
 
-    fun getFavorite(id: Int): Flowable<ResultState<FavoriteEntity?>>
+    fun getFavorite(id: Int): Single<ResultState<Boolean>>
 
-//    fun deleteFavorite(id: Int)
+//    fun deleteFavorite(id: Int): Single<ResultState<Unit>>
 }

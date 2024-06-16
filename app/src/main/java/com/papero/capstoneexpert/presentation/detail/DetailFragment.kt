@@ -1,19 +1,19 @@
 package com.papero.capstoneexpert.presentation.detail
 
+import android.app.Dialog
 import androidx.fragment.app.viewModels
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.papero.capstoneexpert.R
 import com.papero.capstoneexpert.core.base.BaseFragment
-import com.papero.capstoneexpert.core.domain.model.favorite.FavoriteEntity
 import com.papero.capstoneexpert.core.domain.model.now_playing.NowPlayingEntity
 import com.papero.capstoneexpert.core.ui.countRound
 import com.papero.capstoneexpert.core.ui.loadImageWithProgressBar
@@ -22,6 +22,7 @@ import com.papero.capstoneexpert.core.utilities.ResultState
 import com.papero.capstoneexpert.core.utilities.observe
 import com.papero.capstoneexpert.databinding.FragmentDetailBinding
 import com.papero.capstoneexpert.presentation.MainActivity
+import com.papero.capstoneexpert.presentation.utilities.GeneralPopUp
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -32,6 +33,8 @@ class DetailFragment : BaseFragment(), View.OnClickListener {
     private val binding get() = _binding!!
     private var detailMovie: NowPlayingEntity? = null
 
+    private var toSave: Boolean = false
+    private lateinit var dialogLoading: Dialog
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -54,34 +57,11 @@ class DetailFragment : BaseFragment(), View.OnClickListener {
         setInsetsScreen(binding.detaiRoot)
         initListeners()
         observe(viewModel.movie, ::observeMovieDetail)
-        observe(viewModel.favorite, ::observeFindFavorite)
+        observe(viewModel.foundMovie, ::observeFindFavorite)
+        observe(viewModel.saveMovie, ::observeSaveMovie)
     }
 
-    private fun observeFindFavorite(resultState: ResultState<FavoriteEntity?>) {
-        when(resultState) {
-            is ResultState.BadRequest -> {}
-            is ResultState.Conflict -> {}
-            is ResultState.Forbidden -> {}
-            is ResultState.HideLoading -> {}
-            is ResultState.Loading -> {}
-            is ResultState.NoConnection -> {}
-            is ResultState.NotFound -> {}
-            is ResultState.Success -> {
-                val data = resultState.data
-                if (data == null) {
-                    detailMovie?.let { viewModel.addFavorite(it) }
-                    Log.e("TAG", "observeFindFavorite: datanya kosong", )
-                } else {
-                    Log.e("TAG", "observeFindFavorite: datanya ada ${data.toString()}", )
-                }
-            }
-            is ResultState.Timeout -> {}
-            is ResultState.Unauthorized -> {}
-            is ResultState.UnknownError -> {}
-        }
-    }
-
-    fun setInsetsScreen(viewId: ConstraintLayout) {
+    private fun setInsetsScreen(viewId: ConstraintLayout) {
         ViewCompat.setOnApplyWindowInsetsListener(viewId) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(0, 0, 0, systemBars.bottom)
@@ -134,6 +114,68 @@ class DetailFragment : BaseFragment(), View.OnClickListener {
                     message = resultState.message.toString(),
                     actionMessage = null
                 ) {}
+            }
+        }
+    }
+
+    private fun observeSaveMovie(resultState: ResultState<Long>) {
+        when(resultState) {
+            is ResultState.BadRequest -> {}
+            is ResultState.Conflict -> {}
+            is ResultState.Forbidden -> {}
+            is ResultState.HideLoading -> {
+                if (toSave) {
+                    dismissLoading()
+                }
+            }
+            is ResultState.Loading -> {}
+            is ResultState.NoConnection -> {}
+            is ResultState.NotFound -> {}
+            is ResultState.Success ->{
+                Toast.makeText(context, "Movie berhasil di simpan", Toast.LENGTH_SHORT).show()
+                binding.fab.icon = ResourcesCompat.getDrawable(resources, R.drawable.ic_favorite_filled, null)
+            }
+            is ResultState.Timeout -> {}
+            is ResultState.Unauthorized -> {}
+            is ResultState.UnknownError -> {}
+        }
+    }
+
+    private fun observeFindFavorite(resultState: ResultState<Boolean>) {
+        when(resultState) {
+            is ResultState.BadRequest -> {}
+            is ResultState.Conflict -> {}
+            is ResultState.Forbidden -> {}
+            is ResultState.HideLoading -> {
+                if (!toSave) {
+                    dismissLoading()
+                }
+            }
+            is ResultState.Loading -> {
+                showLoading()
+            }
+            is ResultState.NoConnection -> {}
+            is ResultState.NotFound -> {}
+            is ResultState.Success -> {
+                resultState.data?.let { saved ->
+                    if (saved) {
+                        if (toSave) {
+                            Toast.makeText(context, "Data sudah tersimpan", Toast.LENGTH_SHORT)
+                                .show()
+                        } else {
+                            binding.fab.icon = ResourcesCompat.getDrawable(resources, R.drawable.ic_favorite_filled, null)
+                        }
+                    } else {
+                        if (toSave) {
+                            detailMovie?.let { viewModel.addFavorite(it) }
+                        }
+                    }
+                }
+            }
+            is ResultState.Timeout -> {}
+            is ResultState.Unauthorized -> {}
+            is ResultState.UnknownError -> {
+                Log.e("TAG", "observeFindFavorite: ER ${resultState.message}", )
             }
         }
     }
@@ -199,18 +241,30 @@ class DetailFragment : BaseFragment(), View.OnClickListener {
         )
     }
 
+    private fun showLoading() {
+        GeneralPopUp(requireContext()).setupLoadingRounded { dialog ->
+            dialogLoading = dialog
+        }
+    }
+
+    private fun dismissLoading() {
+        if (::dialogLoading.isInitialized && dialogLoading.isShowing) {
+            dialogLoading.dismiss()
+        }
+    }
+
     override fun onResume() {
         super.onResume()
         (requireActivity() as MainActivity).setTitleToolbar("Detail Movie", true)
         (requireActivity() as MainActivity).showBottomNavigation(false)
+        toSave = false
     }
 
     override fun onClick(v: View?) {
         when(v?.id) {
             binding.fab.id -> {
+                toSave = true
                 viewModel.getFavoriteById()
-//                detailMovie?.let { viewModel.addFavorite(it) }
-                Toast.makeText(context, "Ini Di Klik", Toast.LENGTH_SHORT).show()
             }
         }
     }
