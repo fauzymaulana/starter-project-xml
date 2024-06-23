@@ -70,6 +70,31 @@ class RemoteDataSource @Inject constructor(private val api: MovieApi) {
 
     }
 
+    fun getMovieById(id: Int): Flowable<ApiResponse<NowPlayingResponse>> {
+        val resultData = PublishSubject.create<ApiResponse<NowPlayingResponse>>()
+
+        val disposable = api.getMovieById(id)
+            .subscribeOn(Schedulers.io())
+            .take(1)
+            .subscribe(
+                { res ->
+
+                    if (res != null) {
+                        resultData.onNext(ApiResponse.Success(res))
+                    } else {
+                        resultData.onNext(ApiResponse.Empty)
+                    }
+                    resultData.onComplete()
+                },
+                { err ->
+                    resultData.onNext(ApiResponse.Error(err.message.toString()))
+                }
+            )
+
+        compositeDisposable.add(disposable)
+        return resultData.toFlowable(BackpressureStrategy.BUFFER)
+    }
+
     fun clearDisposable() {
         compositeDisposable.clear()
     }

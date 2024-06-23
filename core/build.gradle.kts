@@ -62,11 +62,12 @@ android {
         buildConfig = true
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility =  JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
+
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     kapt {
         correctErrorTypes = true
@@ -74,21 +75,10 @@ android {
 }
 
 dependencies {
-
-    /** Views */
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-
     /** Room DB */
-    api("androidx.room:room-ktx:2.2.5")
-    api("androidx.room:room-runtime:2.2.5")
-    api("androidx.room:room-rxjava2:2.2.5")
-    kapt("androidx.room:room-compiler:2.2.5")
+    api("androidx.room:room-ktx:2.6.1")
+    api("androidx.room:room-runtime:2.6.1")
+    api("androidx.room:room-rxjava2:2.6.1")
+    kapt("androidx.room:room-compiler:2.6.1")
     androidTestImplementation("androidx.room:room-testing:2.2.5")
-
-    /** Test */
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.test.ext.junit)
-    androidTestImplementation(libs.androidx.test.espresso)
-    androidTestImplementation(libs.androidx.annotation)
 }

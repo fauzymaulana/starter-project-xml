@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "CapStone Expert"
 include(":app")
 include(":core")
+include(":favorite")

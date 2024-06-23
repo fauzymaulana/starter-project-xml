@@ -1,4 +1,4 @@
-package com.papero.capstoneexpert.presentation.favorite
+package com.papero.capstoneexpert.presentation.setting
 
 import androidx.fragment.app.viewModels
 import android.os.Bundle
@@ -7,15 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.papero.capstoneexpert.R
-import com.papero.capstoneexpert.presentation.MainActivity
 
-class FavoriteFragment : Fragment() {
+class SettingFragment : Fragment() {
 
     companion object {
-        fun newInstance() = FavoriteFragment()
+        fun newInstance() = SettingFragment()
     }
 
-    private val viewModel: FavoriteViewModel by viewModels()
+    private val viewModel: SettingViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,11 +26,6 @@ class FavoriteFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_favorite, container, false)
-    }
-
-    override fun onResume() {
-        super.onResume()
-        (requireActivity() as MainActivity).setTitleToolbar("Local Movie", false)
+        return inflater.inflate(R.layout.fragment_setting, container, false)
     }
 }

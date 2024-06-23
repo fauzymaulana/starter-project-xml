@@ -14,15 +14,15 @@ dependencies {
     implementation(libs.lottie)
 
     /** Lifecycle */
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    implementation(libs.androidx.lifecycle.livedata.ktx)
-    implementation(libs.androidx.lifecycle.viewmodel.savedstate)
+//    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+//    implementation(libs.androidx.lifecycle.livedata.ktx)
+//    implementation(libs.androidx.lifecycle.viewmodel.savedstate)
 
     /** Navigation */
-    implementation(libs.navigation.fragment)
-    implementation(libs.navigation.ui)
-    implementation(libs.navigation.dynamicFeatures.fragment)
-    implementation(libs.navigation.dynamicFeatures.runtime)
+//    implementation(libs.androidx.navigation.fragment.ktx)
+//    implementation(libs.androidx.navigation.ui.ktx)
+//    implementation(libs.navigation.dynamicFeatures.fragment)
+//    implementation(libs.navigation.dynamicFeatures.runtime)
 
     /** Glide */
     implementation(libs.glide.img)
@@ -45,33 +45,38 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-reactivestreams-ktx:2.2.0")
 
     /** Google Play */
-    implementation(libs.google.play.core)
-    implementation(libs.google.play.base)
+//    implementation(libs.google.play.core)
+//    implementation(libs.google.play.base)
 
     /** Paging3 */
     implementation(libs.androidx.paging.common.ktx)
     implementation(libs.androidx.paging.runtime.ktx)
     implementation(libs.androidx.paging.rxjava.ktx)
 
+    implementation("androidx.multidex:multidex:2.0.1")
+
     /** Work Manager */
-    implementation(libs.androidx.workmanager)
+//    implementation(libs.androidx.workmanager)
 
 //    implementation("com.google.dagger:hilt-android:2.36")
 //    kapt("com.google.dagger:hilt-android-compiler:2.36")
 
     /** Dagger */
-    implementation("com.google.dagger:hilt-android:2.51.1")
-    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
 //    implementation("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
-    kapt("androidx.hilt:hilt-compiler:1.0.0-alpha03")
+    kapt(libs.androidx.hilt.compiler)
+    implementation(libs.androidx.hilt.navigation.fragment)
 
     /** Dynamic Feature Navigation */
-    implementation("androidx.navigation:navigation-dynamic-features-fragment:2.5.3")
-    implementation("androidx.navigation:navigation-dynamic-features-runtime:2.5.3")
+//    implementation("androidx.navigation:navigation-dynamic-features-fragment:2.5.3")
+//    implementation("androidx.navigation:navigation-dynamic-features-runtime:2.5.3")
 
     /** Test */
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.androidx.test.espresso)
     androidTestImplementation(libs.androidx.annotation)
+
+    kapt("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.5.0")
 }

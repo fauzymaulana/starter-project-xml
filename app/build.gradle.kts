@@ -5,10 +5,10 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.kapt)
-//    alias(libs.plugins.navigation.safeargs)
     id("androidx.navigation.safeargs")
     id("kotlin-parcelize")
-    id("kotlin-kapt")
+//    id("kotlin-kapt")
+//    kotlin("kapt")
     id("dagger.hilt.android.plugin")
 }
 
@@ -32,6 +32,7 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+        multiDexEnabled = true
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -46,11 +47,11 @@ android {
         }
         debug {
             buildConfigField("String", "BASE_URL", "${BASE_URL}")
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+//            isMinifyEnabled = false
+//            proguardFiles(
+//                getDefaultProguardFile("proguard-android-optimize.txt"),
+//                "proguard-rules.pro"
+//            )
         }
         release {
             buildConfigField("String", "BASE_URL", "${BASE_URL}")
@@ -61,19 +62,25 @@ android {
             )
         }
     }
+
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility =  JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
+
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         viewBinding = true
         buildConfig = true
     }
+    dynamicFeatures += setOf(":favorite")
     kapt {
         correctErrorTypes = true
+    }
+    hilt {
+        enableExperimentalClasspathAggregation = true
     }
 }
 
@@ -82,14 +89,20 @@ dependencies {
     implementation(project(":core"))
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(libs.androidx.activity)
-//    implementation(libs.legacy.support.v4)
-//    implementation(libs.androidx.lifecycle.livedata.ktx)
-//    implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    implementation(libs.androidx.fragment.ktx)
-    implementation(libs.androidx.paging.common.ktx)
-    implementation(libs.androidx.paging.runtime.ktx)
-    implementation(libs.androidx.paging.rxjava.ktx)
+//    api(libs.google.play.core)
+    api(libs.google.play.base)
+
+    api(libs.androidx.lifecycle.viewmodel.ktx)
+    api(libs.androidx.lifecycle.livedata.ktx)
+    api(libs.androidx.lifecycle.viewmodel.savedstate)
+    api("com.google.android.play:feature-delivery-ktx:2.1.0")
+    api(libs.androidx.navigation.fragment.ktx)
+    api(libs.androidx.navigation.ui.ktx)
+    api(libs.navigation.dynamicFeatures.fragment)
+    api(libs.navigation.dynamicFeatures.runtime)
     implementation(libs.legacy.support.v4)
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.fragment.ktx)
+
 }

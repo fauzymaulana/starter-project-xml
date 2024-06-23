@@ -3,6 +3,7 @@ package com.papero.capstoneexpert.core.ui
 import android.graphics.drawable.Drawable
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
@@ -41,4 +42,43 @@ fun ImageView.loadImageWithProgressBar(url: String?, progressBar: CircularProgre
             }
         })
         .into(this)
+}
+
+fun <T> TextView.setContent(content: T?){
+    var label: String = ""
+    val visible = if (content != null) {
+        when(content) {
+            is String -> {
+                if (content == "") {
+                    View.GONE
+                } else {
+                    label = content
+                    View.VISIBLE
+                }
+            }
+            is Int -> {
+                label = content.toString()
+                View.VISIBLE
+            }
+            is Float -> {
+                label = content.toString()
+                View.VISIBLE
+            }
+            else -> {
+                View.GONE
+            }
+        }
+    } else {
+        View.GONE
+    }
+    text = label
+    visibility = visible
+}
+
+fun countRound(value: Float?): String {
+    return if (value != null) {
+        "${Math.round(value * 10.0) / 10.0}"
+    } else {
+        ""
+    }
 }

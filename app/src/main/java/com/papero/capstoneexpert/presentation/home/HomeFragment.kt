@@ -6,13 +6,17 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.papero.capstoneexpert.R
 import com.papero.capstoneexpert.core.base.BaseFragment
 import com.papero.capstoneexpert.core.domain.model.now_playing.NowPlayingEntity
 import com.papero.capstoneexpert.core.utilities.ResultState
 import com.papero.capstoneexpert.core.utilities.observe
 import com.papero.capstoneexpert.databinding.FragmentHomeBinding
 import com.papero.capstoneexpert.presentation.MainActivity
+import com.papero.capstoneexpert.presentation.home.HomeFragmentDirections
 import com.papero.capstoneexpert.presentation.utilities.OnClickListener
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -22,6 +26,8 @@ class HomeFragment : BaseFragment() {
     private val viewModel: HomeViewModel by viewModels()
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+
+    private var queryFilter = ""
 
 
     override fun onCreateView(
@@ -36,12 +42,14 @@ class HomeFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         observe(viewModel.nowPlaying, ::observeNowPlaying)
+        queryFilter = arguments?.getString(QUERY_FILTER).toString()
+        Log.e("TAG", "onViewCreated: qu $queryFilter", )
     }
 
     private val nowPlayingAdapter by lazy {
-        MovieAdapter(OnClickListener {
+        MovieAdapter<NowPlayingEntity>(OnClickListener {
             it.id?.let { id ->
-
+                moveToDetail(id)
             }
         })
     }
@@ -64,7 +72,15 @@ class HomeFragment : BaseFragment() {
             is ResultState.Loading -> {
                 Log.e("TAG", "observeNowPlaying: Is Loading Active", )
             }
-            is ResultState.NoConnection -> {}
+            is ResultState.NoConnection -> {
+                showSnackBarwithAction(
+                    color = com.google.android.material.R.color.error_color_material_light,
+                    message = resultState.message.toString(),
+                    actionMessage = "Muat Ulang"
+                ) {
+                    viewModel.getNowPlaying()
+                }
+            }
             is ResultState.NotFound -> {}
             is ResultState.Success -> {
                 nowPlayingAdapter.submitList(resultState.data)
@@ -86,13 +102,35 @@ class HomeFragment : BaseFragment() {
     override fun onResume() {
         super.onResume()
         (requireActivity() as MainActivity).setTitleToolbar("Now Playing", false)
+        (requireActivity() as MainActivity).showBottomNavigation(true)
         viewModel.apply {
             getNowPlaying()
         }
     }
 
+    private fun moveToDetail(id: Int) {
+        val detail = HomeFragmentDirections.actionHomeToDetail()
+        detail.movieId = id
+
+        view?.findNavController()?.navigate(detail)
+    }
+
     override fun onStart() {
         super.onStart()
         viewModel.getAllGenre()
+        (activity as MainActivity).findViewById<SearchView>(R.id.searchView).visibility = View.VISIBLE
+    }
+
+    companion object {
+        const val QUERY_FILTER = "queryFilter"
+//        fun newInstance(stageSlug: String, featureSlug: String): HomeFragment {
+//            val args = Bundle()
+//            args.putString(QUERY_FILTER, stageSlug)
+//            args.putString(Const.SLUG_MENU_QUERY, featureSlug)
+//            val fragment = ListFragment()
+//            fragment.arguments = args
+//            return fragment
+//        }
+
     }
 }

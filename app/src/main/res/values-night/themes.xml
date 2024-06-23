@@ -4,4 +4,20 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
+
+    <style name="DialogOverlayTheme" parent="Theme.AppCompat.Dialog.Alert">
+        <!--        <item name="android:windowBackground">@android:color/transparent</item>-->
+        <item name="android:windowMinWidthMinor">0%</item>
+    </style>
+    
+    <style name="CardView">
+        <item name="cardBackgroundColor">@color/background_item_dark</item>
+    </style>
+
+    <style name="FontColor">
+    </style>
+
+    <style name="FontColor.Title">
+        <item name="android:textColor">@color/label_dark</item>
+    </style>
 </resources>

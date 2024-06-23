@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/favoriteFragment">
+
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.papero.capstoneexpert.favorite.presentation.FavoriteFragment"
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_favorite_to_detail"
+            app:destination="@id/detailFragment2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/back_slide_in_left"
+            app:popExitAnim="@anim/back_slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment2"
+        android:name="com.papero.capstoneexpert.presentation.detail.DetailFragment"
+        android:label="DetailFragment" >
+        <argument
+            android:name="movieId"
+            app:argType="integer"
+            android:defaultValue="1" />
+    </fragment>
+</navigation>

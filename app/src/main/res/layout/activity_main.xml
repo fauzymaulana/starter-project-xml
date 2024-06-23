@@ -22,7 +22,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:title="Now Playing"
-            app:titleTextColor="@color/cardview_light_background"/>
+            app:titleTextColor="@color/cardview_light_background">
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchView"
+                android:layout_gravity="end"
+                android:gravity="end"
+                android:visibility="visible"
+                app:queryHint="Mau cari film apa ?"
+                android:theme="@style/searchBar.Text"
+                app:searchIcon="@drawable/ic_magnifier"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp" />
+
+        </com.google.android.material.appbar.MaterialToolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -30,7 +43,7 @@
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:name="androidx.navigation.dynamicfeatures.fragment.DynamicNavHostFragment"
         app:defaultNavHost="true"
         app:navGraph="@navigation/nav_graph"
         app:layout_constraintTop_toBottomOf="@id/app_bar_layout"

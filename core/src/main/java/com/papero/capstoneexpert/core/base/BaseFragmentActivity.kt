@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.view.View
 import android.widget.Toast
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.FragmentActivity
 import com.google.android.material.snackbar.Snackbar
 
@@ -43,9 +44,7 @@ abstract class BaseFragmentActivity: FragmentActivity(){
         val snackMessage = message ?: "Something went wrong"
         val snackbar = Snackbar.make(rootView, snackMessage, Snackbar.LENGTH_LONG)
             .setBackgroundTint(
-                resources.getColor(
-                    color ?: com.google.android.material.R.color.m3_ref_palette_neutral20
-                )
+                ResourcesCompat.getColor(resources, color ?: com.google.android.material.R.color.m3_ref_palette_neutral20, null)
             )
         if (actionMessage != null) {
             snackbar.setAction(actionMessage) {

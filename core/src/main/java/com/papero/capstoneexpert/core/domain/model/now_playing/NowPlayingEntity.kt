@@ -18,6 +18,7 @@ data class NowPlayingEntity(
     val releaseDate: String?,
     val title: String?,
     val voteAverage: Float?,
-    val voteCount: Int?
+    val voteCount: Int?,
+    var isFavorite: Boolean = false
 ) : Parcelable
 

@@ -10,15 +10,34 @@
         android:name="com.papero.capstoneexpert.presentation.home.HomeFragment"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_detailFragment"
+            android:id="@+id/action_home_to_detail"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/back_slide_in_left"
+            app:popExitAnim="@anim/back_slide_out_right"
             app:destination="@id/detailFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.papero.capstoneexpert.presentation.detail.DetailFragment"
-        tools:layout="@layout/fragment_detail" />
-    <fragment
-        android:id="@+id/favoriteFragment"
-        android:name="com.papero.capstoneexpert.presentation.favorite.FavoriteFragment"
-        tools:layout="@layout/fragment_favorite" />
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="movieId"
+            app:argType="integer"
+            android:defaultValue="1" />
+    </fragment>
+
+    <include-dynamic
+        android:id="@+id/favoriteGraph"
+        app:moduleName="favorite"
+        app:graphResName="favorite_nav_graph" >
+        <action
+            android:id="@+id/action_favorite_to_detail"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/back_slide_in_left"
+            app:popExitAnim="@anim/back_slide_out_right"/>
+    </include-dynamic>
+
 </navigation>

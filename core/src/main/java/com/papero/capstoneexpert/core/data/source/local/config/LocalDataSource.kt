@@ -1,10 +1,15 @@
 package com.papero.capstoneexpert.core.data.source.local.config
 
+import com.papero.capstoneexpert.core.data.source.local.dao.FavoriteDao
 import com.papero.capstoneexpert.core.data.source.local.dao.GenreDao
 import com.papero.capstoneexpert.core.data.source.local.dao.NowPlayingDao
+import com.papero.capstoneexpert.core.data.source.local.entity.FavoriteEntityDB
 import com.papero.capstoneexpert.core.data.source.local.entity.GenreEntityDB
 import com.papero.capstoneexpert.core.data.source.local.entity.NowPlayingEntityDB
+import com.papero.capstoneexpert.core.domain.model.now_playing.NowPlayingEntity
+import io.reactivex.Completable
 import io.reactivex.Flowable
+import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -12,7 +17,8 @@ import javax.inject.Singleton
 @Singleton
 class LocalDataSource @Inject constructor(
     private val movieDao: NowPlayingDao,
-    private val genreDao: GenreDao
+    private val genreDao: GenreDao,
+    private val favoriteDao: FavoriteDao
 ) {
 
     fun getAllNowPlaying(): Flowable<List<NowPlayingEntityDB>> {
@@ -38,5 +44,21 @@ class LocalDataSource @Inject constructor(
 
     fun insertAllGenre(genres: List<GenreEntityDB>) {
         genreDao.insertAllGenre(genres)
+    }
+
+    fun getAllFavorite(): Flowable<List<FavoriteEntityDB>> {
+        return favoriteDao.getAllFavorite()
+    }
+
+    fun insertNowPlaying(e: FavoriteEntityDB): Long {
+        return favoriteDao.insertFavorite(e)
+    }
+
+    fun getFavorite(id: Int): FavoriteEntityDB? {
+        return favoriteDao.getFavorite(id)
+    }
+
+    fun deleteFavorite(id:Int): Completable {
+        return favoriteDao.deleteFavorite(id)
     }
 }
