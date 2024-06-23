@@ -14,5 +14,5 @@ interface FavoriteUseCase {
 
     fun getFavorite(id: Int): Single<ResultState<Boolean>>
 
-//    fun deleteFavorite(id: Int): Single<ResultState<Unit>>
+    fun deleteFavorite(id: Int): Single<ResultState<Unit>>
 }

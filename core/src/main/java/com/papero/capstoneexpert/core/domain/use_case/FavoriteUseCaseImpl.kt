@@ -39,10 +39,8 @@ class FavoriteUseCaseImpl @Inject constructor(
             }
     }
 
-//    override fun deleteFavorite(id: Int): Single<ResultState<Unit>> {
-//        return repository.deleteFavorite(id)
-//            .map {
-//                responseMapsToResultState(it) { value -> value}
-//            }
-//    }
+    override fun deleteFavorite(id: Int): Single<ResultState<Unit>> {
+        Log.e("USECA", "deleteFavorite: ek", )
+        return repository.deleteFavorite(id)
+    }
 }

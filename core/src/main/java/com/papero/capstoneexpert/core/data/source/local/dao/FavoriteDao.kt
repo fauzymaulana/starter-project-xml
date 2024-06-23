@@ -22,6 +22,6 @@ interface FavoriteDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertFavorite(movie: FavoriteEntityDB): Long
 
-//    @Delete
-//    fun deleteFavorite(id: Int)
+    @Query("DELETE FROM favoriteROOM WHERE id = :id")
+    fun deleteFavorite(id: Int): Completable
 }

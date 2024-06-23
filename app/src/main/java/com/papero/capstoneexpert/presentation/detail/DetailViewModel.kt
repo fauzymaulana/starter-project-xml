@@ -28,12 +28,18 @@ class DetailViewModel @Inject constructor(
     private val _saveMovie by lazy { MutableLiveData<ResultState<Long>>() }
     val saveMovie get() = _saveMovie
 
+    private val _deleteMovie by lazy { MutableLiveData<ResultState<Unit>>() }
+    val deleteMovie get() = _deleteMovie
+
     private val _movieId by lazy { MutableLiveData<Int>() }
 
     fun setMovieId(id: Int) {
         _movieId.value = id
     }
 
+    fun compareMovieById() {
+//        val disposable = nowPlayingUsecase.
+    }
     fun getMovieById() {
         val disposable = nowPlayingUsecase.getNowPlayingById(_movieId.value ?: 1)
             .subscribeOn(Schedulers.io())
@@ -110,18 +116,55 @@ class DetailViewModel @Inject constructor(
         addDisposable(disposable)
     }
 
-//    fun deleteMovieSaved(id: Int) {
-//        val disposable = favoriteUseCase.deleteFavorite(id)
-//            .subscribeOn(Schedulers.io())
-//            .observeOn(AndroidSchedulers.mainThread())
-//            .subscribe(
-//                { res ->
-//                    Log.e("APA", "kfanjf")
-//                },
-//                { err ->
-//Log.e("APA", "kfanjf")
-//                }
-//            )
-//        addDisposable(disposable)
-//    }
+    fun deleteMovieSaved() {
+        Log.e("TAG", "deleteMovieSaved() returned: ")
+        val disposable = favoriteUseCase.deleteFavorite(_movieId.value ?: 0)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe {
+                _deleteMovie.value = ResultState.Loading()
+            }
+            .subscribe(
+                { res ->
+                    _deleteMovie.value = ResultState.HideLoading()
+                    _deleteMovie.value = res
+                    Log.e("APA", "kfanjf $res")
+                },
+                { err ->
+                    _deleteMovie.value = ResultState.HideLoading()
+                    _deleteMovie.value = ResultState.UnknownError(
+                        message = err.message.toString(),
+                        code = 0,
+                        data = null
+                    )
+Log.e("APA", "kfanjf")
+                }
+            )
+        addDisposable(disposable)
+    }
+
+    fun fetchNowPlayingWithFavorite() {
+        val disposable = nowPlayingUsecase.getNowPlayingWithFavorite(_movieId.value ?: 0)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(
+                { succ ->
+                    _movie.value = ResultState.HideLoading()
+                    _movie.value = succ
+                    Log.e("TAG", "fetchNowPlayingWithFavorite: datanya ada ni cuy ${succ.data}", )
+                    Log.e("TAG", "fetchNowPlayingWithFavorite: datanya ada  ${succ}", )
+                },
+                { err ->
+                    _movie.value = ResultState.HideLoading()
+                    _movie.value = ResultState.UnknownError(
+                        message = err.message.toString(),
+                        code = 0,
+                        data = null
+                    )
+                    Log.e("TAG", "fetchNowPlayingWithFavorite: er ${err.message}", )
+                }
+            )
+
+        addDisposable(disposable)
+    }
 }

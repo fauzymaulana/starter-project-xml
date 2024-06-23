@@ -13,5 +13,5 @@ interface FavoriteRepository {
 
     fun getFavorite(id: Int): Single<Boolean>
 
-//    fun deleteFavorite(id: Int): Single<Unit>
+    fun deleteFavorite(id: Int): Single<ResultState<Unit>>
 }

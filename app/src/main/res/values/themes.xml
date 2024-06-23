@@ -10,4 +10,15 @@
         <!--        <item name="android:windowBackground">@android:color/transparent</item>-->
         <item name="android:windowMinWidthMinor">0%</item>
     </style>
+
+    <style name="ThemeCardView">
+        <item name="cardBackgroundColor">@color/background_item_light</item>
+    </style>
+
+    <style name="FontColor">
+    </style>
+
+    <style name="FontColor.Title">
+        <item name="android:textColor">@color/label_light</item>
+    </style>
 </resources>

@@ -58,7 +58,7 @@ class LocalDataSource @Inject constructor(
         return favoriteDao.getFavorite(id)
     }
 
-//    fun deleteFavorite(id:Int) {
-//        return favoriteDao.deleteFavorite(id)
-//    }
+    fun deleteFavorite(id:Int): Completable {
+        return favoriteDao.deleteFavorite(id)
+    }
 }

@@ -1,12 +1,15 @@
 package com.papero.capstoneexpert.presentation
 
+//import android.R
+import android.R.menu
 import android.os.Bundle
+import android.util.Log
+import android.view.Menu
 import android.view.View
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.core.content.res.ResourcesCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.MenuItemCompat
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -15,7 +18,10 @@ import androidx.navigation.ui.setupWithNavController
 import com.papero.capstoneexpert.R
 import com.papero.capstoneexpert.core.base.BaseActivity
 import com.papero.capstoneexpert.databinding.ActivityMainBinding
+import com.papero.capstoneexpert.presentation.home.HomeFragment
+import com.papero.capstoneexpert.presentation.utilities.SearchViewHelper
 import dagger.hilt.android.AndroidEntryPoint
+
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity() {
@@ -49,6 +55,35 @@ class MainActivity : BaseActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        return findNavController(R.id.fragment_container).navigateUp(appbarConfiguration)
+        return findNavController(com.papero.capstoneexpert.R.id.fragment_container).navigateUp(appbarConfiguration)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflate = menuInflater
+        inflate.inflate(com.papero.capstoneexpert.R.menu.menu_toolbar, menu)
+        val searchView = menu?.findItem(com.papero.capstoneexpert.R.id.action_search)
+        val i = MenuItemCompat.getActionView(searchView) as SearchView
+//        SearchViewHelper.setOnFocus(binding.searchView)
+        i.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                Log.e("TAG", "onQueryTextChange: sumit ${query.toString()}")
+                val b = findNavController(androidx.navigation.fragment.R.id.nav_host_fragment_container)
+                val bun = Bundle()
+                bun.putString(HomeFragment.QUERY_FILTER, query.toString())
+                b.navigate(com.papero.capstoneexpert.R.id.homeFragment, bun)
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                Log.e("TAG", "onQueryTextChange: data $newText")
+                val b = findNavController(androidx.navigation.fragment.R.id.nav_host_fragment_container)
+                val bun = Bundle()
+                bun.putString(HomeFragment.QUERY_FILTER, newText.toString())
+                b.navigate(com.papero.capstoneexpert.R.id.homeFragment, bun)
+                return false
+            }
+        })
+
+        return super.onCreateOptionsMenu(menu)
     }
 }

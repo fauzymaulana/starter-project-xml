@@ -8,6 +8,7 @@ import com.papero.capstoneexpert.core.domain.mapper.toListEntity
 import com.papero.capstoneexpert.core.domain.model.favorite.FavoriteEntity
 import com.papero.capstoneexpert.core.domain.repository.FavoriteRepository
 import com.papero.capstoneexpert.core.utilities.ResultState
+import com.papero.capstoneexpert.core.utilities.responseErrorToResultStateError
 import com.papero.capstoneexpert.core.utilities.responseMapsToResultState
 import io.reactivex.Flowable
 import io.reactivex.FlowableEmitter
@@ -107,16 +108,14 @@ class FavoriteRepositoryImpl @Inject constructor(
 //            .onErrorReturn { false }
 //    }
 
-//    override fun deleteFavorite(id: Int): Single<Unit> {
-//        return Single.create { emitter ->
-//            emitter.onSuccess(localDS.deleteFavorite(id))
-////            Log.e("TAG", "deleteFavorite: data delete $delete", )
-////            if (delete == 0) {
-////                emitter.onSuccess(true)
-////            } else {
-////                emitter.onSuccess(false)
-////            }
-//        }
-//
-//    }
+    override fun deleteFavorite(id: Int): Single<ResultState<Unit>> {
+        Log.e("TAG", "deleteFavorite: kno", )
+        return localDS.deleteFavorite(id)
+            .toSingle {
+                responseMapsToResultState(Unit) {}
+            }
+            .onErrorReturn {
+                responseErrorToResultStateError(it)
+            }
+    }
 }

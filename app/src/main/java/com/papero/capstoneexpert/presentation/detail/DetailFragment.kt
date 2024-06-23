@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.widget.SearchView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.ViewCompat
@@ -35,6 +36,8 @@ class DetailFragment : BaseFragment(), View.OnClickListener {
 
     private var toSave: Boolean = false
     private lateinit var dialogLoading: Dialog
+
+    private var searchView: SearchView? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -48,17 +51,21 @@ class DetailFragment : BaseFragment(), View.OnClickListener {
 
         val movieId = DetailFragmentArgs.fromBundle(arguments as Bundle).movieId
         movieId.let { id ->
+            Log.e("TAG", "onViewCreated: dat $id", )
             viewModel.apply {
                 setMovieId(id)
-                getMovieById()
+//                getMovieById()
+                fetchNowPlayingWithFavorite()
             }
         }
 
         setInsetsScreen(binding.detaiRoot)
+        initViews()
         initListeners()
         observe(viewModel.movie, ::observeMovieDetail)
         observe(viewModel.foundMovie, ::observeFindFavorite)
         observe(viewModel.saveMovie, ::observeSaveMovie)
+        observe(viewModel.deleteMovie, ::observeDeleteMovie)
     }
 
     private fun setInsetsScreen(viewId: ConstraintLayout) {
@@ -69,6 +76,9 @@ class DetailFragment : BaseFragment(), View.OnClickListener {
         }
     }
 
+    private fun initViews() {
+        searchView = activity?.findViewById(R.id.searchView)
+    }
     private fun initListeners() {
         binding.fab.setOnClickListener(this)
     }
@@ -104,6 +114,13 @@ class DetailFragment : BaseFragment(), View.OnClickListener {
 //                    setWebPage(e.)
                     setOverview(e.overview)
 
+                    binding.fab.icon = ResourcesCompat.getDrawable(
+                        resources,
+                        if (e.isFavorite) R.drawable.ic_favorite_filled else R.drawable.ic_favorite_outline,
+                        null
+                    )
+//                    binding.fab.image(R.drawable.ic_favorite_outline)
+                    binding.fab.setTag(R.id.fab_icon_tag, if (e.isFavorite) R.drawable.ic_favorite_filled else R.drawable.ic_favorite_outline)
                 }
             }
             is ResultState.Timeout -> {}
@@ -134,6 +151,31 @@ class DetailFragment : BaseFragment(), View.OnClickListener {
             is ResultState.Success ->{
                 Toast.makeText(context, "Movie berhasil di simpan", Toast.LENGTH_SHORT).show()
                 binding.fab.icon = ResourcesCompat.getDrawable(resources, R.drawable.ic_favorite_filled, null)
+                binding.fab.setTag(R.id.fab_icon_tag, R.drawable.ic_favorite_filled)
+            }
+            is ResultState.Timeout -> {}
+            is ResultState.Unauthorized -> {}
+            is ResultState.UnknownError -> {}
+        }
+    }
+
+    private fun observeDeleteMovie(resultState: ResultState<Unit>) {
+        when(resultState) {
+            is ResultState.BadRequest -> {}
+            is ResultState.Conflict -> {}
+            is ResultState.Forbidden -> {}
+            is ResultState.HideLoading -> {
+                dismissLoading()
+            }
+            is ResultState.Loading -> {
+                showLoading()
+            }
+            is ResultState.NoConnection -> {}
+            is ResultState.NotFound -> {}
+            is ResultState.Success -> {
+                Toast.makeText(context, "Berhasil menghapus data", Toast.LENGTH_SHORT).show()
+                binding.fab.icon = ResourcesCompat.getDrawable(resources, R.drawable.ic_favorite_outline, null)
+                binding.fab.setTag(R.id.fab_icon_tag, R.drawable.ic_favorite_outline)
             }
             is ResultState.Timeout -> {}
             is ResultState.Unauthorized -> {}
@@ -162,8 +204,6 @@ class DetailFragment : BaseFragment(), View.OnClickListener {
                         if (toSave) {
                             Toast.makeText(context, "Data sudah tersimpan", Toast.LENGTH_SHORT)
                                 .show()
-                        } else {
-                            binding.fab.icon = ResourcesCompat.getDrawable(resources, R.drawable.ic_favorite_filled, null)
                         }
                     } else {
                         if (toSave) {
@@ -263,9 +303,36 @@ class DetailFragment : BaseFragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v?.id) {
             binding.fab.id -> {
-                toSave = true
-                viewModel.getFavoriteById()
+                Log.e("TAG", "onClick: di", )
+//                when (binding.fab.icon) {
+//                    ResourcesCompat.getDrawable(resources, R.drawable.ic_favorite_filled, null) -> {
+//                        Log.e("TAG", "onClick: d", )
+//                        viewModel.deleteMovieSaved()
+//                    }
+//                    ResourcesCompat.getDrawable(resources, R.drawable.ic_favorite_outline, null) -> {
+//                        Log.e("TAG", "onClick: s", )
+//                        toSave = true
+//                        viewModel.getFavoriteById()
+//                    }
+//                }
+                when(binding.fab.getTag(R.id.fab_icon_tag) as? Int) {
+                    R.drawable.ic_favorite_filled -> {
+                        Log.e("TAG", "onClick: d", )
+
+                        viewModel.deleteMovieSaved()
+                    }
+                    R.drawable.ic_favorite_outline -> {
+                        Log.e("TAG", "onClick: s", )
+                        toSave = true
+                        viewModel.getFavoriteById()
+                    }
+                }
             }
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        (activity as MainActivity).findViewById<SearchView>(R.id.searchView).visibility = View.GONE
     }
 }
