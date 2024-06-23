@@ -20,6 +20,13 @@ android {
     }
 
     buildTypes {
+        debug {
+//            isMinifyEnabled = false
+//            proguardFiles(
+//                getDefaultProguardFile("proguard-android-optimize.txt"),
+//                "proguard-rules.pro"
+//            )
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -41,10 +48,21 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+    hilt {
+        enableExperimentalClasspathAggregation = true
+    }
 }
 
 dependencies {
     implementation(project(":app"))
     implementation(project(":core"))
 //    implementation(libs.google.play.delivery.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.google.android.material)
+//    implementation(libs.androidx.activity)
+    implementation(libs.androidx.constraint)
+    implementation(libs.legacy.support.v4)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.fragment.ktx)
 }

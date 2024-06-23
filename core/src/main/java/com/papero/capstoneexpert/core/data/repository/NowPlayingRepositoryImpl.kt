@@ -14,6 +14,7 @@ import com.papero.capstoneexpert.core.domain.model.now_playing.NowPlayingEntity
 import com.papero.capstoneexpert.core.domain.repository.NowPlayingRepository
 import com.papero.capstoneexpert.core.utilities.ResultState
 import io.reactivex.Flowable
+import io.reactivex.Observable
 import retrofit2.HttpException
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -84,4 +85,13 @@ class NowPlayingRepositoryImpl @Inject constructor(
         }
         return result.asFlowable()
     }
+
+//    override fun getNowPlayingWithFavorite(id: Int): Observable<ResultState<NowPlayingEntity>> {
+//        return Observable.zip(
+//            localDS.getNowPlayingById(id).toObservable(),
+//            localDS.getFavorite(id)
+//        ) { movie, favorite ->
+//
+//        }
+//    }
 }

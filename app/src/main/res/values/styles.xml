@@ -27,4 +27,27 @@
     <style name="TextAppearance.BottomNavigationView.Active">
         <item name="android:textSize">10sp</item>
     </style>
+
+    <style name="searchBar">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:background">@drawable/bg_container_corner_8</item>
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:drawableStart">@drawable/ic_magnifier</item>
+        <item name="android:drawablePadding">15dp</item>
+        <item name="android:lines">1</item>
+        <item name="android:inputType">text</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:gravity">start|center_vertical</item>
+    </style>
+
+    <style name="searchBar.Text" parent="Widget.AppCompat.SearchView">
+        <item name="android:textSize">15sp</item>
+        <item name="android:maxLines">1</item>
+        <!--        <item name="android:drawableStart">@drawable/ic_magnify</item>-->
+        <!--        <item name="android:drawablePadding">15dp</item>-->
+    </style>
 </resources>

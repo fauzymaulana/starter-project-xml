@@ -8,13 +8,16 @@ import com.papero.capstoneexpert.core.domain.mapper.toListEntity
 import com.papero.capstoneexpert.core.domain.model.favorite.FavoriteEntity
 import com.papero.capstoneexpert.core.domain.repository.FavoriteRepository
 import com.papero.capstoneexpert.core.utilities.ResultState
+import com.papero.capstoneexpert.core.utilities.responseErrorToResultStateError
 import com.papero.capstoneexpert.core.utilities.responseMapsToResultState
-import io.reactivex.Completable
 import io.reactivex.Flowable
+import io.reactivex.FlowableEmitter
 import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
+import java.lang.String
 import javax.inject.Inject
 import javax.inject.Singleton
+
 
 @Singleton
 class FavoriteRepositoryImpl @Inject constructor(
@@ -30,16 +33,39 @@ class FavoriteRepositoryImpl @Inject constructor(
     }
 
     override fun insertFavorite(entity: FavoriteEntity): Single<Long> {
-        return localDS.insertNowPlaying(entity.toEntityDB())
-            .subscribeOn(Schedulers.io())
+        return Single.create { emitter ->
+            Log.e("TAG", "insertFavorite: fav ", )
+            try {
+                val insert = localDS.insertNowPlaying(entity.toEntityDB())
+                emitter.onSuccess(insert)
+            } catch (e: Exception) {
+                Log.e("TAG", "insertFavorite: err ${e.message.toString()}", )
+                emitter.onError(e)
+            }
+        }
+//        Flowable.create({ emitter ->
+//            val a = localDS.insertNowPlaying(entity.toEntityDB())
+//            emitter.onNext(a)
+//        })
+//        return localDS.insertNowPlaying(entity.toEntityDB())
+//            .subscribeOn(Schedulers.io())
     }
 
-    override fun getFavorite(id: Int): Flowable<FavoriteEntity?> {
-        return localDS.getFavorite(id)
-            .subscribeOn(Schedulers.io())
-            .map {
-                it.toEntity()
+    override fun getFavorite(id: Int): Single<Boolean> {
+        Log.e("TAG", "getFavorite: REPO", )
+        return Single.create { emitter ->
+            val find = localDS.getFavorite(id)
+            if (find != null) {
+                emitter.onSuccess(true)
+            } else {
+                emitter.onSuccess(false)
             }
+        }
+//        return localDS.getFavorite(id)
+//            .subscribeOn(Schedulers.io())
+//            .map {
+//                it.toEntity()
+//            }
     }
 
 //        return localDS.getFavorite(entity.id ?: 0)
@@ -82,8 +108,14 @@ class FavoriteRepositoryImpl @Inject constructor(
 //            .onErrorReturn { false }
 //    }
 
-//    override fun deleteFavorite(id: Int) {
-//        return localDS.deleteFavorite(id)
-//
-//    }
+    override fun deleteFavorite(id: Int): Single<ResultState<Unit>> {
+        Log.e("TAG", "deleteFavorite: kno", )
+        return localDS.deleteFavorite(id)
+            .toSingle {
+                responseMapsToResultState(Unit) {}
+            }
+            .onErrorReturn {
+                responseErrorToResultStateError(it)
+            }
+    }
 }

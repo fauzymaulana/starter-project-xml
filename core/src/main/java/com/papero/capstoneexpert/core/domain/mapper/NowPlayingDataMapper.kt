@@ -93,3 +93,23 @@ fun NowPlayingEntity?.toFavoriteEntity(): FavoriteEntity {
         genreIds = mutableListOf()
     )
 }
+
+fun NowPlayingEntity?.toFavoriteEntity(isFavorite: Boolean): NowPlayingEntity {
+    return NowPlayingEntity(
+        id = this?.id ?: 0,
+        title = this?.title ?: "",
+        releaseDate = this?.releaseDate,
+        voteAverage = this?.voteAverage,
+        popularity = this?.popularity,
+        overview = this?.overview,
+        originalTitle = this?.originalTitle,
+        originalLanguage = this?.originalLanguage,
+        backdropPath = this?.backdropPath,
+        posterPath = this?.posterPath,
+        adult = this?.adult,
+        voteCount = this?.voteCount,
+        genreIds = mutableListOf(),
+        isFavorite = isFavorite
+    )
+
+}

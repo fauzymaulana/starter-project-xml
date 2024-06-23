@@ -44,7 +44,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="@drawable/gradient_linear_white_transparent"
+                android:background="@drawable/gradient_linear_transparent"
                 app:layout_constraintBottom_toBottomOf="@id/iv_thumbnail"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -80,7 +80,7 @@
             android:drawablePadding="4dp"
             android:drawableTint="@color/yellow"
             android:textSize="18sp"
-            android:textColor="@color/black"
+            android:theme="@style/FontColor.Title"
             tools:text="7.54"
             app:layout_constraintStart_toEndOf="@id/tag_adult"
             app:layout_constraintTop_toTopOf="@id/tag_adult"
@@ -93,7 +93,7 @@
             android:layout_marginStart="10dp"
             tools:text="(12K reviews)"
             android:textSize="14sp"
-            android:textColor="@color/black"
+            android:theme="@style/FontColor.Title"
             app:layout_constraintStart_toEndOf="@id/txt_rating"
             app:layout_constraintTop_toTopOf="@id/txt_rating"
             app:layout_constraintBottom_toBottomOf="@id/txt_rating"/>
@@ -106,7 +106,7 @@
             android:textSize="21sp"
             android:maxLines="2"
             android:ellipsize="end"
-            android:textColor="@color/black"
+            android:theme="@style/FontColor.Title"
             android:textStyle="bold"
             tools:text="Bad Boy The Super Mario Bros. Movie"
             app:layout_constraintTop_toBottomOf="@id/txt_rating"
@@ -125,6 +125,7 @@
             android:layout_height="wrap_content"
             android:text="Popularitas"
             android:layout_marginTop="20dp"
+            android:theme="@style/FontColor.Title"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="@id/txt_title"
             app:layout_constraintEnd_toStartOf="@id/guideline_attribute"
@@ -137,6 +138,7 @@
             android:layout_marginStart="6dp"
             tools:text="12 Maret 2023"
             android:textStyle="bold"
+            android:theme="@style/FontColor.Title"
             android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@id/guideline_attribute"
             app:layout_constraintTop_toTopOf="@id/label_popularity"
@@ -149,6 +151,7 @@
             android:text="Tanggal rilis"
             android:layout_marginTop="4dp"
             android:textSize="14sp"
+            android:theme="@style/FontColor.Title"
             app:layout_constraintStart_toStartOf="@id/label_popularity"
             app:layout_constraintEnd_toStartOf="@id/guideline_attribute"
             app:layout_constraintTop_toBottomOf="@id/label_popularity"/>
@@ -161,6 +164,7 @@
             tools:text="12 Maret 2023"
             android:textStyle="bold"
             android:textSize="14sp"
+            android:theme="@style/FontColor.Title"
             app:layout_constraintStart_toEndOf="@id/guideline_attribute"
             app:layout_constraintTop_toTopOf="@id/label_release"
             app:layout_constraintBottom_toBottomOf="@id/label_release"/>
@@ -198,6 +202,7 @@
             app:layout_constraintStart_toStartOf="@id/guideline_attribute"
             app:layout_constraintEnd_toEndOf="@id/guideline_attribute"
             android:text=":"
+            android:theme="@style/FontColor.Title"
             />
 
         <TextView
@@ -210,6 +215,7 @@
             app:layout_constraintStart_toStartOf="@id/guideline_attribute"
             app:layout_constraintEnd_toEndOf="@id/guideline_attribute"
             android:text=":"
+            android:theme="@style/FontColor.Title"
             />
 
         <TextView
@@ -229,6 +235,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:theme="@style/FontColor.Title"
             tools:text="After their late former Captain is framed, Lowrey and Burnett try to clear his name, only to end up on the run themselves."
             app:layout_constraintTop_toBottomOf="@id/label_laman"/>
 
@@ -242,6 +249,7 @@
         android:layout_marginEnd="16dp"
         android:padding="5dp"
         app:icon="@drawable/ic_favorite_outline"
+
         android:layout_marginBottom="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>

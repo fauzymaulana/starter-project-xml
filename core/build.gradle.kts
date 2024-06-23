@@ -76,10 +76,9 @@ android {
 
 dependencies {
     /** Room DB */
-    api("androidx.room:room-ktx:2.2.5")
-    api("androidx.room:room-runtime:2.2.5")
-    api("androidx.room:room-rxjava2:2.2.5")
-    kapt("androidx.room:room-compiler:2.2.5")
-    annotationProcessor("androidx.room:room-compiler:2.2.5")
+    api("androidx.room:room-ktx:2.6.1")
+    api("androidx.room:room-runtime:2.6.1")
+    api("androidx.room:room-rxjava2:2.6.1")
+    kapt("androidx.room:room-compiler:2.6.1")
     androidTestImplementation("androidx.room:room-testing:2.2.5")
 }

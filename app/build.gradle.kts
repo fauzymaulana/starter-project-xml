@@ -7,7 +7,8 @@ plugins {
     alias(libs.plugins.kotlin.kapt)
     id("androidx.navigation.safeargs")
     id("kotlin-parcelize")
-    id("kotlin-kapt")
+//    id("kotlin-kapt")
+//    kotlin("kapt")
     id("dagger.hilt.android.plugin")
 }
 
@@ -31,6 +32,7 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+        multiDexEnabled = true
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -45,11 +47,11 @@ android {
         }
         debug {
             buildConfigField("String", "BASE_URL", "${BASE_URL}")
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+//            isMinifyEnabled = false
+//            proguardFiles(
+//                getDefaultProguardFile("proguard-android-optimize.txt"),
+//                "proguard-rules.pro"
+//            )
         }
         release {
             buildConfigField("String", "BASE_URL", "${BASE_URL}")
@@ -77,6 +79,9 @@ android {
     kapt {
         correctErrorTypes = true
     }
+    hilt {
+        enableExperimentalClasspathAggregation = true
+    }
 }
 
 dependencies {
@@ -95,5 +100,9 @@ dependencies {
     api(libs.androidx.navigation.ui.ktx)
     api(libs.navigation.dynamicFeatures.fragment)
     api(libs.navigation.dynamicFeatures.runtime)
+    implementation(libs.legacy.support.v4)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.fragment.ktx)
 
 }

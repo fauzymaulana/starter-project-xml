@@ -6,8 +6,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.papero.capstoneexpert.R
 import com.papero.capstoneexpert.core.base.BaseFragment
 import com.papero.capstoneexpert.core.domain.model.now_playing.NowPlayingEntity
 import com.papero.capstoneexpert.core.utilities.ResultState
@@ -25,6 +27,8 @@ class HomeFragment : BaseFragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
+    private var queryFilter = ""
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,6 +42,8 @@ class HomeFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         observe(viewModel.nowPlaying, ::observeNowPlaying)
+        queryFilter = arguments?.getString(QUERY_FILTER).toString()
+        Log.e("TAG", "onViewCreated: qu $queryFilter", )
     }
 
     private val nowPlayingAdapter by lazy {
@@ -112,5 +118,19 @@ class HomeFragment : BaseFragment() {
     override fun onStart() {
         super.onStart()
         viewModel.getAllGenre()
+        (activity as MainActivity).findViewById<SearchView>(R.id.searchView).visibility = View.VISIBLE
+    }
+
+    companion object {
+        const val QUERY_FILTER = "queryFilter"
+//        fun newInstance(stageSlug: String, featureSlug: String): HomeFragment {
+//            val args = Bundle()
+//            args.putString(QUERY_FILTER, stageSlug)
+//            args.putString(Const.SLUG_MENU_QUERY, featureSlug)
+//            val fragment = ListFragment()
+//            fragment.arguments = args
+//            return fragment
+//        }
+
     }
 }
