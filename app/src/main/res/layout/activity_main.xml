@@ -60,6 +60,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/BottomNavigation"
+        android:theme="@style/BColor"
         app:itemActiveIndicatorStyle="@android:color/transparent"
         app:menu="@menu/bottom_nav_menu"
         app:itemRippleColor="@android:color/transparent"

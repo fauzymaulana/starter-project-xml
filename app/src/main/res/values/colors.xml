@@ -13,4 +13,5 @@
     <color name="label_light">#FF000000</color>
     <color name="gradient_transparent_3">#07F6F6F6</color>
     <color name="gradient_solid">#FFFFFFFF</color>
+    <color name="background_bottom_nav">#FFFFFFFF</color>
 </resources>

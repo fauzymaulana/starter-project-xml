@@ -21,4 +21,10 @@
     <style name="FontColor.Title">
         <item name="android:textColor">@color/label_light</item>
     </style>
+    
+    <style name="BColor">
+        <item name="backgroundTint">@color/background_bottom_nav</item>
+        <item name="background">@color/background_bottom_nav</item>
+        <item name="android:background">@color/background_bottom_nav</item>
+    </style>
 </resources>
