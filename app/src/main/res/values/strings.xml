@@ -2,4 +2,6 @@
     <string name="app_name">CapStone Expert</string>
     <string name="title_favorite">Favorite</string>
     <string name="popup_label_please_waiting">Mohon tunggu...</string>
+    <string name="setting_label_version">Versi %1$s</string>
+    <string name="setting_label_night_mode">Tampilan mode malam</string>
 </resources>

@@ -22,6 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:title="Now Playing"
+            app:menu="@menu/menu_toolbar"
             app:titleTextColor="@color/cardview_light_background">
 
             <androidx.appcompat.widget.SearchView

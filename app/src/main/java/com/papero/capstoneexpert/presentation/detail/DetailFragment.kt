@@ -37,7 +37,7 @@ class DetailFragment : BaseFragment(), View.OnClickListener {
     private var toSave: Boolean = false
     private lateinit var dialogLoading: Dialog
 
-    private var searchView: SearchView? = null
+//    private var searchView: SearchView? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -77,7 +77,7 @@ class DetailFragment : BaseFragment(), View.OnClickListener {
     }
 
     private fun initViews() {
-        searchView = activity?.findViewById(R.id.searchView)
+//        searchView = activity?.findViewById(R.id.searchView)
     }
     private fun initListeners() {
         binding.fab.setOnClickListener(this)

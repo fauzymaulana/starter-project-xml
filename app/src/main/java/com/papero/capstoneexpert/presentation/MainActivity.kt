@@ -5,7 +5,9 @@ import android.R.menu
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
+import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.widget.SearchView
 import androidx.core.content.res.ResourcesCompat
@@ -42,11 +44,23 @@ class MainActivity : BaseActivity() {
         appbarConfiguration = AppBarConfiguration(navController.graph)
         binding.toolbar.setupWithNavController(navController, appbarConfiguration)
         binding.bottomNavigation.setupWithNavController(navController)
+
+
+        binding.toolbar.setOnMenuItemClickListener { menuItem ->
+            when(menuItem.itemId) {
+                R.id.action_setting -> {
+                    Toast.makeText(this, "Di Klik lA", Toast.LENGTH_SHORT).show()
+                    true
+                }
+                else -> {
+                    false
+                }
+            }
+        }
     }
 
     fun setTitleToolbar(title: String?, showBackIcon: Boolean) {
         binding.toolbar.title = title ?: "Movie"
-//        supportActionBar?.setDisplayHomeAsUpEnabled(showBackIcon)
         binding.toolbar.navigationIcon = if (showBackIcon) ResourcesCompat.getDrawable(resources, R.drawable.ic_arrow_back, null) else null
     }
 
@@ -55,22 +69,22 @@ class MainActivity : BaseActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        return findNavController(com.papero.capstoneexpert.R.id.fragment_container).navigateUp(appbarConfiguration)
+        return findNavController(R.id.fragment_container).navigateUp(appbarConfiguration)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val inflate = menuInflater
-        inflate.inflate(com.papero.capstoneexpert.R.menu.menu_toolbar, menu)
-        val searchView = menu?.findItem(com.papero.capstoneexpert.R.id.action_search)
-        val i = MenuItemCompat.getActionView(searchView) as SearchView
-//        SearchViewHelper.setOnFocus(binding.searchView)
-        i.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+//        val inflate = menuInflater
+//        inflate.inflate(R.menu.menu_toolbar, menu)
+//        val searchView = menu?.findItem(R.id.action_search)
+//        val i = MenuItemCompat.getActionView(searchView) as SearchView
+        SearchViewHelper.setOnFocus(binding.searchView)
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 Log.e("TAG", "onQueryTextChange: sumit ${query.toString()}")
                 val b = findNavController(androidx.navigation.fragment.R.id.nav_host_fragment_container)
                 val bun = Bundle()
                 bun.putString(HomeFragment.QUERY_FILTER, query.toString())
-                b.navigate(com.papero.capstoneexpert.R.id.homeFragment, bun)
+                b.navigate(R.id.homeFragment, bun)
                 return false
             }
 
@@ -79,11 +93,12 @@ class MainActivity : BaseActivity() {
                 val b = findNavController(androidx.navigation.fragment.R.id.nav_host_fragment_container)
                 val bun = Bundle()
                 bun.putString(HomeFragment.QUERY_FILTER, newText.toString())
-                b.navigate(com.papero.capstoneexpert.R.id.homeFragment, bun)
+                b.navigate(R.id.homeFragment, bun)
                 return false
             }
         })
 
-        return super.onCreateOptionsMenu(menu)
+//        return super.onCreateOptionsMenu(menu)
+        return true
     }
 }
