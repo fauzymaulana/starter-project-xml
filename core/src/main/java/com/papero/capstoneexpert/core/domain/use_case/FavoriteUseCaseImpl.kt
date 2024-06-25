@@ -21,7 +21,6 @@ class FavoriteUseCaseImpl @Inject constructor(
     }
 
     override fun insertFavorite(e: FavoriteEntity): Single<ResultState<Long>> {
-        Log.e("TAG", "insertFavorite: ini maso", )
         return repository.insertFavorite(e)
             .map {
                 return@map responseMapsToResultState(it) { ent ->
@@ -31,16 +30,13 @@ class FavoriteUseCaseImpl @Inject constructor(
     }
 
     override fun getFavorite(id: Int): Single<ResultState<Boolean>> {
-        Log.e("TAG", "getFavorite: usecase ", )
         return repository.getFavorite(id)
             .map {
-                Log.e("TAG", "getFavorite: ini ${it.toString()}", )
                 return@map responseMapsToResultState(it) { ent -> ent}
             }
     }
 
     override fun deleteFavorite(id: Int): Single<ResultState<Unit>> {
-        Log.e("USECA", "deleteFavorite: ek", )
         return repository.deleteFavorite(id)
     }
 }

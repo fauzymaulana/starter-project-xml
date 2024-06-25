@@ -3,10 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.FavoriteFragment">
+
+    <TextView
+        android:id="@+id/label_empty"
+        android:text="@string/favorite_label_not_found_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_favorite"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/item_now_playing_layout"/>

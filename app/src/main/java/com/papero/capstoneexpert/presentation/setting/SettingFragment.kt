@@ -39,6 +39,5 @@ class SettingFragment : BaseFragment() {
 
     override fun onStart() {
         super.onStart()
-        (activity as MainActivity).findViewById<SearchView>(R.id.searchView).visibility = View.GONE
     }
 }

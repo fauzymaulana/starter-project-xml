@@ -34,25 +34,16 @@ class FavoriteRepositoryImpl @Inject constructor(
 
     override fun insertFavorite(entity: FavoriteEntity): Single<Long> {
         return Single.create { emitter ->
-            Log.e("TAG", "insertFavorite: fav ", )
             try {
                 val insert = localDS.insertNowPlaying(entity.toEntityDB())
                 emitter.onSuccess(insert)
             } catch (e: Exception) {
-                Log.e("TAG", "insertFavorite: err ${e.message.toString()}", )
                 emitter.onError(e)
             }
         }
-//        Flowable.create({ emitter ->
-//            val a = localDS.insertNowPlaying(entity.toEntityDB())
-//            emitter.onNext(a)
-//        })
-//        return localDS.insertNowPlaying(entity.toEntityDB())
-//            .subscribeOn(Schedulers.io())
     }
 
     override fun getFavorite(id: Int): Single<Boolean> {
-        Log.e("TAG", "getFavorite: REPO", )
         return Single.create { emitter ->
             val find = localDS.getFavorite(id)
             if (find != null) {
@@ -61,55 +52,9 @@ class FavoriteRepositoryImpl @Inject constructor(
                 emitter.onSuccess(false)
             }
         }
-//        return localDS.getFavorite(id)
-//            .subscribeOn(Schedulers.io())
-//            .map {
-//                it.toEntity()
-//            }
     }
 
-//        return localDS.getFavorite(entity.id ?: 0)
-//            .map {
-//
-//            }
-//            .flatMap {
-//                if (it == null) {
-//                    localDS.insertNowPlaying(entity.toEntityDB())
-//                } else {
-//                    -1L
-//                }
-//            }
-//    }
-//        return  Single.create { emit ->
-//            localDS.getFavorite(entity.id ?: 0)
-//                .subscribe {
-//                    if (it == null) {
-//                        localDS.insertNowPlaying(entity.toEntityDB())
-//                            .map { id ->
-//                                emit.onSuccess(id)
-//                            }
-//                    } else {
-//                        emit.onSuccess(0)
-//                    }
-//                }
-//        }
-//        return localDS.insertNowPlaying(entity.toEntityDB())
-//            .subscribeOn(Schedulers.io())
-
-//            .flatMapCompletable { favorite ->
-//                if (favorite == null) {
-//                    localDS.insertNowPlaying(entity.toEntityDB())
-//                } else {
-//                    Completable.complete()
-//                }
-//            }
-//            .toFlowable<Boolean?>()
-//            .map { true }
-//            .onErrorReturn { false }
-//    }
-
     override fun deleteFavorite(id: Int): Single<ResultState<Unit>> {
-        Log.e("TAG", "deleteFavorite: kno", )
         return localDS.deleteFavorite(id)
             .toSingle {
                 responseMapsToResultState(Unit) {}

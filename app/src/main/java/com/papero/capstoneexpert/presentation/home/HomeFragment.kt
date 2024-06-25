@@ -43,7 +43,6 @@ class HomeFragment : BaseFragment() {
 
         observe(viewModel.nowPlaying, ::observeNowPlaying)
         queryFilter = arguments?.getString(QUERY_FILTER).toString()
-        Log.e("TAG", "onViewCreated: qu $queryFilter", )
     }
 
     private val nowPlayingAdapter by lazy {
@@ -70,7 +69,6 @@ class HomeFragment : BaseFragment() {
             is ResultState.Forbidden -> {}
             is ResultState.HideLoading -> {}
             is ResultState.Loading -> {
-                Log.e("TAG", "observeNowPlaying: Is Loading Active", )
             }
             is ResultState.NoConnection -> {
                 showSnackBarwithAction(
@@ -85,7 +83,6 @@ class HomeFragment : BaseFragment() {
             is ResultState.Success -> {
                 nowPlayingAdapter.submitList(resultState.data)
                 setupRecycler()
-                Log.e("TAG", "observeNowPlaying: ini datanya ${resultState.data?.toList()}", )
             }
             is ResultState.Timeout -> {}
             is ResultState.Unauthorized -> {}
@@ -118,19 +115,9 @@ class HomeFragment : BaseFragment() {
     override fun onStart() {
         super.onStart()
         viewModel.getAllGenre()
-        (activity as MainActivity).findViewById<SearchView>(R.id.searchView).visibility = View.VISIBLE
     }
 
     companion object {
         const val QUERY_FILTER = "queryFilter"
-//        fun newInstance(stageSlug: String, featureSlug: String): HomeFragment {
-//            val args = Bundle()
-//            args.putString(QUERY_FILTER, stageSlug)
-//            args.putString(Const.SLUG_MENU_QUERY, featureSlug)
-//            val fragment = ListFragment()
-//            fragment.arguments = args
-//            return fragment
-//        }
-
     }
 }

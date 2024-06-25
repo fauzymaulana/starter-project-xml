@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.TextureView
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
@@ -28,7 +29,7 @@ import dagger.hilt.android.EntryPointAccessors
 import dagger.hilt.android.HiltAndroidApp
 import javax.inject.Inject
 
-class FavoriteFragment : Fragment() {
+class FavoriteFragment : BaseFragment() {
 
     @Inject
     lateinit var factory: ViewModelFactory
@@ -37,6 +38,7 @@ class FavoriteFragment : Fragment() {
         factory
     }
     private var rvFavorite: RecyclerView? = null
+    private var txtError: TextureView? = null
 
     override fun onAttach(context: Context) {
         DaggerFavoriteComponent.builder()
@@ -65,7 +67,8 @@ class FavoriteFragment : Fragment() {
     }
 
     private fun initViews() {
-        rvFavorite = view?.findViewById(R.id.rv_favorite)
+        rvFavorite  = view?.findViewById(R.id.rv_favorite)
+        txtError    = view?.findViewById(R.id.label_empty)
     }
 
     private fun setupRecycler() {
@@ -92,49 +95,49 @@ class FavoriteFragment : Fragment() {
             is ResultState.HideLoading -> {}
             is ResultState.Loading -> {}
             is ResultState.NoConnection -> {
-//                showSnackBarwithAction(
-//                    color = com.google.android.material.R.color.error_color_material_light,
-//                    message = resultState.message.toString(),
-//                    actionMessage = "Muat Ulang"
-//                ) {
-//                    viewModel.getAllFavorite()
-//                }
+                showSnackBarwithAction(
+                    color = com.google.android.material.R.color.error_color_material_light,
+                    message = resultState.message.toString(),
+                    actionMessage = "Muat Ulang"
+                ) {
+                    viewModel.getAllFavorite()
+                }
             }
             is ResultState.NotFound -> {}
             is ResultState.Success -> {
-                Log.e("TAG", "observeFavoriteList: datana ${resultState.data?.toList()}", )
-                favoriteAdapter.submitList(resultState.data)
-                Log.e("TAG", "observeFavoriteList: sampe sini", )
-                setupRecycler()
+                if (resultState.data?.isNotEmpty() == true) {
+                    rvFavorite?.visibility = View.VISIBLE
+                    txtError?.visibility = View.GONE
+                    favoriteAdapter.submitList(resultState.data)
+                    setupRecycler()
+                } else {
+                    rvFavorite?.visibility = View.GONE
+                    txtError?.visibility = View.VISIBLE
+                }
+
             }
             is ResultState.Timeout -> {}
             is ResultState.Unauthorized -> {}
             is ResultState.UnknownError -> {
-//                showSnackBarwithAction(
-//                    color = com.google.android.material.R.color.error_color_material_light,
-//                    message = resultState.message.toString(),
-//                    actionMessage = null
-//                ) {}
+                showSnackBarwithAction(
+                    color = com.google.android.material.R.color.error_color_material_light,
+                    message = resultState.message.toString(),
+                    actionMessage = null
+                ) {}
             }
         }
     }
 
     override fun onResume() {
         super.onResume()
-        Log.e("TAG", "onResume: sampai sini", )
         (requireActivity() as MainActivity).setTitleToolbar("Local Movie", false)
         (requireActivity() as MainActivity).showBottomNavigation(true)
     }
 
     private fun moveToDetail(id: Int) {
         val detail = FavoriteFragmentDirections.actionFavoriteToDetail()
-        Log.e("TAG", "moveToDetail: id $id", )
         detail.movieId = id
 
         view?.findNavController()?.navigate(detail)
-    }
-
-    companion object {
-        fun newInstance() = FavoriteFragment()
     }
 }

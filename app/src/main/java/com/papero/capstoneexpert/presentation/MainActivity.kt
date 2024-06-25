@@ -1,6 +1,5 @@
 package com.papero.capstoneexpert.presentation
 
-//import android.R
 import android.R.menu
 import android.os.Bundle
 import android.util.Log
@@ -44,19 +43,6 @@ class MainActivity : BaseActivity() {
         appbarConfiguration = AppBarConfiguration(navController.graph)
         binding.toolbar.setupWithNavController(navController, appbarConfiguration)
         binding.bottomNavigation.setupWithNavController(navController)
-
-
-        binding.toolbar.setOnMenuItemClickListener { menuItem ->
-            when(menuItem.itemId) {
-                R.id.action_setting -> {
-                    Toast.makeText(this, "Di Klik lA", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                else -> {
-                    false
-                }
-            }
-        }
     }
 
     fun setTitleToolbar(title: String?, showBackIcon: Boolean) {
@@ -70,35 +56,5 @@ class MainActivity : BaseActivity() {
 
     override fun onSupportNavigateUp(): Boolean {
         return findNavController(R.id.fragment_container).navigateUp(appbarConfiguration)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-//        val inflate = menuInflater
-//        inflate.inflate(R.menu.menu_toolbar, menu)
-//        val searchView = menu?.findItem(R.id.action_search)
-//        val i = MenuItemCompat.getActionView(searchView) as SearchView
-        SearchViewHelper.setOnFocus(binding.searchView)
-        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                Log.e("TAG", "onQueryTextChange: sumit ${query.toString()}")
-                val b = findNavController(androidx.navigation.fragment.R.id.nav_host_fragment_container)
-                val bun = Bundle()
-                bun.putString(HomeFragment.QUERY_FILTER, query.toString())
-                b.navigate(R.id.homeFragment, bun)
-                return false
-            }
-
-            override fun onQueryTextChange(newText: String?): Boolean {
-                Log.e("TAG", "onQueryTextChange: data $newText")
-                val b = findNavController(androidx.navigation.fragment.R.id.nav_host_fragment_container)
-                val bun = Bundle()
-                bun.putString(HomeFragment.QUERY_FILTER, newText.toString())
-                b.navigate(R.id.homeFragment, bun)
-                return false
-            }
-        })
-
-//        return super.onCreateOptionsMenu(menu)
-        return true
     }
 }

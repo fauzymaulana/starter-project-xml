@@ -22,19 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:title="Now Playing"
-            app:menu="@menu/menu_toolbar"
             app:titleTextColor="@color/cardview_light_background">
-
-            <androidx.appcompat.widget.SearchView
-                android:id="@+id/searchView"
-                android:layout_gravity="end"
-                android:gravity="end"
-                android:visibility="visible"
-                app:queryHint="Mau cari film apa ?"
-                android:theme="@style/searchBar.Text"
-                app:searchIcon="@drawable/ic_magnifier"
-                android:layout_width="wrap_content"
-                android:layout_height="38dp" />
 
         </com.google.android.material.appbar.MaterialToolbar>
 

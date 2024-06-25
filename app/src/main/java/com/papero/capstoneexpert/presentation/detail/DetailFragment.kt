@@ -37,7 +37,6 @@ class DetailFragment : BaseFragment(), View.OnClickListener {
     private var toSave: Boolean = false
     private lateinit var dialogLoading: Dialog
 
-//    private var searchView: SearchView? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -60,7 +59,6 @@ class DetailFragment : BaseFragment(), View.OnClickListener {
         }
 
         setInsetsScreen(binding.detaiRoot)
-        initViews()
         initListeners()
         observe(viewModel.movie, ::observeMovieDetail)
         observe(viewModel.foundMovie, ::observeFindFavorite)
@@ -76,9 +74,6 @@ class DetailFragment : BaseFragment(), View.OnClickListener {
         }
     }
 
-    private fun initViews() {
-//        searchView = activity?.findViewById(R.id.searchView)
-    }
     private fun initListeners() {
         binding.fab.setOnClickListener(this)
     }
@@ -303,18 +298,6 @@ class DetailFragment : BaseFragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v?.id) {
             binding.fab.id -> {
-                Log.e("TAG", "onClick: di", )
-//                when (binding.fab.icon) {
-//                    ResourcesCompat.getDrawable(resources, R.drawable.ic_favorite_filled, null) -> {
-//                        Log.e("TAG", "onClick: d", )
-//                        viewModel.deleteMovieSaved()
-//                    }
-//                    ResourcesCompat.getDrawable(resources, R.drawable.ic_favorite_outline, null) -> {
-//                        Log.e("TAG", "onClick: s", )
-//                        toSave = true
-//                        viewModel.getFavoriteById()
-//                    }
-//                }
                 when(binding.fab.getTag(R.id.fab_icon_tag) as? Int) {
                     R.drawable.ic_favorite_filled -> {
                         Log.e("TAG", "onClick: d", )
@@ -333,6 +316,5 @@ class DetailFragment : BaseFragment(), View.OnClickListener {
 
     override fun onStart() {
         super.onStart()
-        (activity as MainActivity).findViewById<SearchView>(R.id.searchView).visibility = View.GONE
     }
 }

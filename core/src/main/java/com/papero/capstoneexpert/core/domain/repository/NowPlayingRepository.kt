@@ -10,7 +10,4 @@ interface NowPlayingRepository {
     fun getAllNowPlaying(): Flowable<ResultState<List<NowPlayingEntity>>>
 
     fun getNowPlayingById(id: Int): Flowable<ResultState<NowPlayingEntity>>
-
-//    fun getNowPlayingWithFavorite(id: Int): Observable<ResultState<NowPlayingEntity>>
-
 }
