@@ -37,9 +37,6 @@ class DetailViewModel @Inject constructor(
         _movieId.value = id
     }
 
-    fun compareMovieById() {
-//        val disposable = nowPlayingUsecase.
-    }
     fun getMovieById() {
         val disposable = nowPlayingUsecase.getNowPlayingById(_movieId.value ?: 1)
             .subscribeOn(Schedulers.io())
@@ -66,7 +63,6 @@ class DetailViewModel @Inject constructor(
     }
 
     fun getFavoriteById() {
-        Log.e("TAG", "getFavoriteById: ekm", )
         val disposable = favoriteUseCase.getFavorite(_movieId.value ?: 0)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -92,7 +88,6 @@ class DetailViewModel @Inject constructor(
     }
 
     fun addFavorite(e: NowPlayingEntity) {
-        Log.e("TAG", "addFavorite: ek", )
         val disposable = favoriteUseCase.insertFavorite(e.toFavoriteEntity())
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -100,7 +95,6 @@ class DetailViewModel @Inject constructor(
                 { res ->
                     _saveMovie.value = ResultState.HideLoading()
                     _saveMovie.value = res
-                    Log.e("TAG", "addFavorite: daanya ${res.data}", )
                 },
                 { err ->
                     _saveMovie.value = ResultState.HideLoading()
@@ -109,7 +103,6 @@ class DetailViewModel @Inject constructor(
                         code = 0,
                         data = null
                     )
-                    Log.e("TAG", "addFavorite: err ${err.message}", )
                 }
             )
 
@@ -117,7 +110,6 @@ class DetailViewModel @Inject constructor(
     }
 
     fun deleteMovieSaved() {
-        Log.e("TAG", "deleteMovieSaved() returned: ")
         val disposable = favoriteUseCase.deleteFavorite(_movieId.value ?: 0)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -128,7 +120,6 @@ class DetailViewModel @Inject constructor(
                 { res ->
                     _deleteMovie.value = ResultState.HideLoading()
                     _deleteMovie.value = res
-                    Log.e("APA", "kfanjf $res")
                 },
                 { err ->
                     _deleteMovie.value = ResultState.HideLoading()
@@ -137,7 +128,6 @@ class DetailViewModel @Inject constructor(
                         code = 0,
                         data = null
                     )
-Log.e("APA", "kfanjf")
                 }
             )
         addDisposable(disposable)
@@ -151,8 +141,6 @@ Log.e("APA", "kfanjf")
                 { succ ->
                     _movie.value = ResultState.HideLoading()
                     _movie.value = succ
-                    Log.e("TAG", "fetchNowPlayingWithFavorite: datanya ada ni cuy ${succ.data}", )
-                    Log.e("TAG", "fetchNowPlayingWithFavorite: datanya ada  ${succ}", )
                 },
                 { err ->
                     _movie.value = ResultState.HideLoading()
@@ -161,7 +149,6 @@ Log.e("APA", "kfanjf")
                         code = 0,
                         data = null
                     )
-                    Log.e("TAG", "fetchNowPlayingWithFavorite: er ${err.message}", )
                 }
             )
 

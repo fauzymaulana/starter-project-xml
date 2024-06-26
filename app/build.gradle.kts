@@ -7,8 +7,6 @@ plugins {
     alias(libs.plugins.kotlin.kapt)
     id("androidx.navigation.safeargs")
     id("kotlin-parcelize")
-//    id("kotlin-kapt")
-//    kotlin("kapt")
     id("dagger.hilt.android.plugin")
 }
 
@@ -47,11 +45,6 @@ android {
         }
         debug {
             buildConfigField("String", "BASE_URL", "${BASE_URL}")
-//            isMinifyEnabled = false
-//            proguardFiles(
-//                getDefaultProguardFile("proguard-android-optimize.txt"),
-//                "proguard-rules.pro"
-//            )
         }
         release {
             buildConfigField("String", "BASE_URL", "${BASE_URL}")
@@ -89,7 +82,6 @@ dependencies {
     implementation(project(":core"))
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(libs.androidx.activity)
-//    api(libs.google.play.core)
     api(libs.google.play.base)
 
     api(libs.androidx.lifecycle.viewmodel.ktx)

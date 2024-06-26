@@ -42,14 +42,11 @@ class NowPlayingRepositoryImpl @Inject constructor(
                 data.map { nowPlaying ->
                     nowPlaying.genreIds?.map { id ->
                         val genre = localDS.getGenreById(id)
-                        Log.e("TAG", "saveCallResult: data $genre", )
-//                        temp.add(genre.name)
                     }
                     tempMovie.add(
                         nowPlaying.toEntity(temp)
                     )
 
-                    Log.e("====", "saveCallResult: now play ${tempMovie.toList()}", )
                 }
                 val a = tempMovie.toList()
                 val nowPlayingList = a.toListEntity<NowPlayingEntity, NowPlayingEntityDB>()
@@ -75,7 +72,6 @@ class NowPlayingRepositoryImpl @Inject constructor(
             }
 
             override fun saveCallResult(data: NowPlayingResponse) {
-//                val nowPlaying = data.toEntityDB()
                 data.toEntityDB()
             }
 
@@ -85,13 +81,4 @@ class NowPlayingRepositoryImpl @Inject constructor(
         }
         return result.asFlowable()
     }
-
-//    override fun getNowPlayingWithFavorite(id: Int): Observable<ResultState<NowPlayingEntity>> {
-//        return Observable.zip(
-//            localDS.getNowPlayingById(id).toObservable(),
-//            localDS.getFavorite(id)
-//        ) { movie, favorite ->
-//
-//        }
-//    }
 }
