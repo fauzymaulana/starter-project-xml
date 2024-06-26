@@ -3,4 +3,5 @@
     <color name="gradient_solid">#FF000000</color>
     <color name="gradient_transparent_3">#07050505</color>
     <color name="background_bottom_nav">#FF252525</color>
+    <color name="background_item">#FFF4F4F4</color>
 </resources>

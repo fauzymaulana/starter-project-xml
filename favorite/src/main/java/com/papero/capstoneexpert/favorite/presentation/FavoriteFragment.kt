@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.TextureView
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -38,7 +39,7 @@ class FavoriteFragment : BaseFragment() {
         factory
     }
     private var rvFavorite: RecyclerView? = null
-    private var txtError: TextureView? = null
+    private var txtError: TextView? = null
 
     override fun onAttach(context: Context) {
         DaggerFavoriteComponent.builder()
@@ -68,7 +69,7 @@ class FavoriteFragment : BaseFragment() {
 
     private fun initViews() {
         rvFavorite  = view?.findViewById(R.id.rv_favorite)
-        txtError    = view?.findViewById(R.id.label_empty)
+        txtError    = view?.findViewById(R.id.label_data_empty)
     }
 
     private fun setupRecycler() {
