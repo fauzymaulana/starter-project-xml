@@ -97,4 +97,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.fragment.ktx)
 
+    testImplementation("org.mockito:mockito-core:4.4.0")
+    testImplementation("org.mockito:mockito-inline:4.4.0")
+
 }
