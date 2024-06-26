@@ -10,6 +10,7 @@ import com.papero.capstoneexpert.core.data.source.remote.RemoteDataSource
 import com.papero.capstoneexpert.core.domain.mapper.toEntity
 import com.papero.capstoneexpert.core.domain.mapper.toEntityDB
 import com.papero.capstoneexpert.core.domain.mapper.toListEntity
+import com.papero.capstoneexpert.core.domain.model.now_playing.MessageEntity
 import com.papero.capstoneexpert.core.domain.model.now_playing.NowPlayingEntity
 import com.papero.capstoneexpert.core.domain.repository.NowPlayingRepository
 import com.papero.capstoneexpert.core.utilities.ResultState
@@ -80,5 +81,9 @@ class NowPlayingRepositoryImpl @Inject constructor(
             }
         }
         return result.asFlowable()
+    }
+
+    override fun message(name: String): MessageEntity {
+        return remoteDS.getMessageFromSource(name)
     }
 }

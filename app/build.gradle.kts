@@ -24,6 +24,10 @@ android {
     namespace = "com.papero.capstoneexpert"
     compileSdk = 34
 
+    lint {
+        baseline = file("lint-baseline.xml")
+    }
+
     defaultConfig {
         applicationId = "com.papero.capstoneexpert"
         minSdk = 23

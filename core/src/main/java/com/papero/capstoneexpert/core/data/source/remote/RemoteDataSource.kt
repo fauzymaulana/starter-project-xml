@@ -5,6 +5,7 @@ import com.papero.capstoneexpert.core.data.networking.MovieApi
 import com.papero.capstoneexpert.core.data.source.local.config.ApiResponse
 import com.papero.capstoneexpert.core.data.source.remote.genre.ItemGenreResponse
 import com.papero.capstoneexpert.core.data.source.remote.now_playing.NowPlayingResponse
+import com.papero.capstoneexpert.core.domain.model.now_playing.MessageEntity
 import io.reactivex.BackpressureStrategy
 import io.reactivex.Flowable
 import io.reactivex.disposables.CompositeDisposable
@@ -98,4 +99,7 @@ class RemoteDataSource @Inject constructor(private val api: MovieApi) {
     fun clearDisposable() {
         compositeDisposable.clear()
     }
+
+    fun getMessageFromSource(name: String) =
+        MessageEntity("Hello $name! Welcome to Clean Architecture")
 }

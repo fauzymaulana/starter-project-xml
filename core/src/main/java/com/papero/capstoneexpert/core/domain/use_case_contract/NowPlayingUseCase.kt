@@ -1,5 +1,6 @@
 package com.papero.capstoneexpert.core.domain.use_case_contract
 
+import com.papero.capstoneexpert.core.domain.model.now_playing.MessageEntity
 import com.papero.capstoneexpert.core.domain.model.now_playing.NowPlayingEntity
 import com.papero.capstoneexpert.core.utilities.ResultState
 import io.reactivex.Flowable
@@ -13,4 +14,5 @@ interface NowPlayingUseCase {
 
     fun getNowPlayingWithFavorite(id: Int): Observable<ResultState<NowPlayingEntity>>
 
+    fun message(name: String): MessageEntity
 }

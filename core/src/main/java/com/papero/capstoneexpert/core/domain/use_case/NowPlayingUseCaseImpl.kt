@@ -3,6 +3,7 @@ package com.papero.capstoneexpert.core.domain.use_case
 import com.papero.capstoneexpert.core.domain.mapper.toEntityDB
 import com.papero.capstoneexpert.core.domain.mapper.toFavoriteEntity
 import com.papero.capstoneexpert.core.domain.model.favorite.FavoriteEntity
+import com.papero.capstoneexpert.core.domain.model.now_playing.MessageEntity
 import com.papero.capstoneexpert.core.domain.model.now_playing.NowPlayingEntity
 import com.papero.capstoneexpert.core.domain.repository.FavoriteRepository
 import com.papero.capstoneexpert.core.domain.repository.NowPlayingRepository
@@ -47,5 +48,9 @@ class NowPlayingUseCaseImpl @Inject constructor(
                 }
             }!!
         }
+    }
+
+    override fun message(name: String): MessageEntity {
+        return repository.message(name)
     }
 }

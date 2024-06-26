@@ -1,0 +1,2002 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="6" by="lint 8.4.1" type="baseline" client="gradle" dependencies="false" name="AGP (8.4.1)" variant="all" version="8.4.1">
+
+    <issue
+        id="UnusedAttribute"
+        message="Attribute `enableOnBackInvokedCallback` is only used in API level 33 and higher (current min is 31)"
+        errorLine1="        android:enableOnBackInvokedCallback=&quot;true&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/AndroidManifest.xml"
+            line="12"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="VectorRaster"
+        message="Limit vector icons sizes to 200×200 to keep icon drawing fast; see https://developer.android.com/studio/write/vector-asset-studio#when for more"
+        errorLine1="    android:width=&quot;800dp&quot;"
+        errorLine2="                   ~~~~~">
+        <location
+            file="src/main/res/drawable/ic_menu_settings.xml"
+            line="2"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="AndroidGradlePluginVersion"
+        message="A newer version of com.android.application than 8.4.1 is available: 8.5.0. (There is also a newer version of 8.4.𝑥 available, if upgrading to 8.5.0 is difficult: 8.4.2)"
+        errorLine1="gradle = &quot;8.4.1&quot;"
+        errorLine2="         ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="29"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="AndroidGradlePluginVersion"
+        message="A newer version of com.android.application than 8.4.1 is available: 8.5.0. (There is also a newer version of 8.4.𝑥 available, if upgrading to 8.5.0 is difficult: 8.4.2)"
+        errorLine1="gradle = &quot;8.4.1&quot;"
+        errorLine2="         ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="29"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="AndroidGradlePluginVersion"
+        message="A newer version of com.android.application than 8.4.1 is available: 8.5.0. (There is also a newer version of 8.4.𝑥 available, if upgrading to 8.5.0 is difficult: 8.4.2)"
+        errorLine1="gradle = &quot;8.4.1&quot;"
+        errorLine2="         ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="29"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="AndroidGradlePluginVersion"
+        message="A newer version of com.android.dynamic-feature than 8.4.1 is available: 8.5.0. (There is also a newer version of 8.4.𝑥 available, if upgrading to 8.5.0 is difficult: 8.4.2)"
+        errorLine1="gradle = &quot;8.4.1&quot;"
+        errorLine2="         ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="29"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="AndroidGradlePluginVersion"
+        message="A newer version of com.android.dynamic-feature than 8.4.1 is available: 8.5.0. (There is also a newer version of 8.4.𝑥 available, if upgrading to 8.5.0 is difficult: 8.4.2)"
+        errorLine1="gradle = &quot;8.4.1&quot;"
+        errorLine2="         ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="29"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="AndroidGradlePluginVersion"
+        message="A newer version of com.android.dynamic-feature than 8.4.1 is available: 8.5.0. (There is also a newer version of 8.4.𝑥 available, if upgrading to 8.5.0 is difficult: 8.4.2)"
+        errorLine1="gradle = &quot;8.4.1&quot;"
+        errorLine2="         ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="29"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="AndroidGradlePluginVersion"
+        message="A newer version of com.android.library than 8.4.1 is available: 8.5.0. (There is also a newer version of 8.4.𝑥 available, if upgrading to 8.5.0 is difficult: 8.4.2)"
+        errorLine1="gradle = &quot;8.4.1&quot;"
+        errorLine2="         ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="29"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="AndroidGradlePluginVersion"
+        message="A newer version of com.android.library than 8.4.1 is available: 8.5.0. (There is also a newer version of 8.4.𝑥 available, if upgrading to 8.5.0 is difficult: 8.4.2)"
+        errorLine1="gradle = &quot;8.4.1&quot;"
+        errorLine2="         ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="29"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="AndroidGradlePluginVersion"
+        message="A newer version of com.android.library than 8.4.1 is available: 8.5.0. (There is also a newer version of 8.4.𝑥 available, if upgrading to 8.5.0 is difficult: 8.4.2)"
+        errorLine1="gradle = &quot;8.4.1&quot;"
+        errorLine2="         ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="29"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="AndroidGradlePluginVersion"
+        message="A newer version of com.android.tools.build:gradle than 8.4.1 is available: 8.5.0. (There is also a newer version of 8.4.𝑥 available, if upgrading to 8.5.0 is difficult: 8.4.2)"
+        errorLine1="gradle = &quot;8.4.1&quot;"
+        errorLine2="         ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="29"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="AndroidGradlePluginVersion"
+        message="A newer version of com.android.tools.build:gradle than 8.4.1 is available: 8.5.0. (There is also a newer version of 8.4.𝑥 available, if upgrading to 8.5.0 is difficult: 8.4.2)"
+        errorLine1="gradle = &quot;8.4.1&quot;"
+        errorLine2="         ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="29"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="AndroidGradlePluginVersion"
+        message="A newer version of com.android.tools.build:gradle than 8.4.1 is available: 8.5.0. (There is also a newer version of 8.4.𝑥 available, if upgrading to 8.5.0 is difficult: 8.4.2)"
+        errorLine1="gradle = &quot;8.4.1&quot;"
+        errorLine2="         ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="29"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test:rules than 1.4.0 is available: 1.6.0"
+        errorLine1="androidTest = &quot;1.4.0&quot;"
+        errorLine2="              ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="4"
+            column="15"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test:rules than 1.4.0 is available: 1.6.0"
+        errorLine1="androidTest = &quot;1.4.0&quot;"
+        errorLine2="              ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="4"
+            column="15"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test:rules than 1.4.0 is available: 1.6.0"
+        errorLine1="androidTest = &quot;1.4.0&quot;"
+        errorLine2="              ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="4"
+            column="15"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test:runner than 1.4.0 is available: 1.6.0"
+        errorLine1="androidTest = &quot;1.4.0&quot;"
+        errorLine2="              ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="4"
+            column="15"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test:runner than 1.4.0 is available: 1.6.0"
+        errorLine1="androidTest = &quot;1.4.0&quot;"
+        errorLine2="              ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="4"
+            column="15"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test:runner than 1.4.0 is available: 1.6.0"
+        errorLine1="androidTest = &quot;1.4.0&quot;"
+        errorLine2="              ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="4"
+            column="15"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.0"
+        errorLine1="androidxAppCompat = &quot;1.6.1&quot;"
+        errorLine2="                    ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="5"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.0"
+        errorLine1="androidxAppCompat = &quot;1.6.1&quot;"
+        errorLine2="                    ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="5"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.7.0"
+        errorLine1="androidxAppCompat = &quot;1.6.1&quot;"
+        errorLine2="                    ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="5"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.recyclerview:recyclerview than 1.3.0 is available: 1.3.2"
+        errorLine1="androidxRecycler = &quot;1.3.0&quot;"
+        errorLine2="                   ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="7"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.recyclerview:recyclerview than 1.3.0 is available: 1.3.2"
+        errorLine1="androidxRecycler = &quot;1.3.0&quot;"
+        errorLine2="                   ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="7"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.recyclerview:recyclerview than 1.3.0 is available: 1.3.2"
+        errorLine1="androidxRecycler = &quot;1.3.0&quot;"
+        errorLine2="                   ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="7"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.6.0"
+        errorLine1="androidxEspresso = &quot;3.5.1&quot;"
+        errorLine2="                   ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="10"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.6.0"
+        errorLine1="androidxEspresso = &quot;3.5.1&quot;"
+        errorLine2="                   ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="10"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.6.0"
+        errorLine1="androidxEspresso = &quot;3.5.1&quot;"
+        errorLine2="                   ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="10"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.0"
+        errorLine1="androidxJunit = &quot;1.1.5&quot;"
+        errorLine2="                ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="11"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.0"
+        errorLine1="androidxJunit = &quot;1.1.5&quot;"
+        errorLine2="                ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="11"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.0"
+        errorLine1="androidxJunit = &quot;1.1.5&quot;"
+        errorLine2="                ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="11"
+            column="17"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.android.play:app-update-ktx than 2.0.1 is available: 2.1.0"
+        errorLine1="googlePlayUpdateKtx = &quot;2.0.1&quot;"
+        errorLine2="                      ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="19"
+            column="23"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.android.play:app-update-ktx than 2.0.1 is available: 2.1.0"
+        errorLine1="googlePlayUpdateKtx = &quot;2.0.1&quot;"
+        errorLine2="                      ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="19"
+            column="23"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.android.play:app-update-ktx than 2.0.1 is available: 2.1.0"
+        errorLine1="googlePlayUpdateKtx = &quot;2.0.1&quot;"
+        errorLine2="                      ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="19"
+            column="23"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.android.gms:play-services-auth than 20.6.0 is available: 21.2.0"
+        errorLine1="googlePlayAuth = &quot;20.6.0&quot;"
+        errorLine2="                 ~~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="21"
+            column="18"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.android.gms:play-services-auth than 20.6.0 is available: 21.2.0"
+        errorLine1="googlePlayAuth = &quot;20.6.0&quot;"
+        errorLine2="                 ~~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="21"
+            column="18"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.android.gms:play-services-auth than 20.6.0 is available: 21.2.0"
+        errorLine1="googlePlayAuth = &quot;20.6.0&quot;"
+        errorLine2="                 ~~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="21"
+            column="18"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.android.gms:play-services-base than 18.2.0 is available: 18.5.0"
+        errorLine1="googlePlayBase = &quot;18.2.0&quot;"
+        errorLine2="                 ~~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="22"
+            column="18"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.android.gms:play-services-base than 18.2.0 is available: 18.5.0"
+        errorLine1="googlePlayBase = &quot;18.2.0&quot;"
+        errorLine2="                 ~~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="22"
+            column="18"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.android.gms:play-services-base than 18.2.0 is available: 18.5.0"
+        errorLine1="googlePlayBase = &quot;18.2.0&quot;"
+        errorLine2="                 ~~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="22"
+            column="18"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.android.gms:play-services-location than 21.0.1 is available: 21.3.0"
+        errorLine1="googlePlayLocation = &quot;21.0.1&quot;"
+        errorLine2="                     ~~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="23"
+            column="22"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.android.gms:play-services-location than 21.0.1 is available: 21.3.0"
+        errorLine1="googlePlayLocation = &quot;21.0.1&quot;"
+        errorLine2="                     ~~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="23"
+            column="22"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.android.gms:play-services-location than 21.0.1 is available: 21.3.0"
+        errorLine1="googlePlayLocation = &quot;21.0.1&quot;"
+        errorLine2="                     ~~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="23"
+            column="22"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.android.gms:play-services-maps than 17.0.0 is available: 19.0.0. Upgrading to at least 18.2.0 is highly recommended to take advantage of the new renderer, which supports customization options like map styling, 3D tiles, and is more reliable, with better support going forward."
+        errorLine1="googlePlayMaps = &quot;17.0.0&quot;"
+        errorLine2="                 ~~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="24"
+            column="18"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.android.gms:play-services-maps than 17.0.0 is available: 19.0.0. Upgrading to at least 18.2.0 is highly recommended to take advantage of the new renderer, which supports customization options like map styling, 3D tiles, and is more reliable, with better support going forward."
+        errorLine1="googlePlayMaps = &quot;17.0.0&quot;"
+        errorLine2="                 ~~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="24"
+            column="18"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.android.gms:play-services-maps than 17.0.0 is available: 19.0.0. Upgrading to at least 18.2.0 is highly recommended to take advantage of the new renderer, which supports customization options like map styling, 3D tiles, and is more reliable, with better support going forward."
+        errorLine1="googlePlayMaps = &quot;17.0.0&quot;"
+        errorLine2="                 ~~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="24"
+            column="18"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.firebase:firebase-messaging-ktx than 23.0.3 is available: 24.0.0"
+        errorLine1="firebaseMessage = &quot;23.0.3&quot;"
+        errorLine2="                  ~~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="27"
+            column="19"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.firebase:firebase-messaging-ktx than 23.0.3 is available: 24.0.0"
+        errorLine1="firebaseMessage = &quot;23.0.3&quot;"
+        errorLine2="                  ~~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="27"
+            column="19"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.firebase:firebase-messaging-ktx than 23.0.3 is available: 24.0.0"
+        errorLine1="firebaseMessage = &quot;23.0.3&quot;"
+        errorLine2="                  ~~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="27"
+            column="19"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.firebase:firebase-bom than 31.2.2 is available: 33.1.1"
+        errorLine1="firebaseBom = &quot;31.2.2&quot;"
+        errorLine2="              ~~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="28"
+            column="15"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.firebase:firebase-bom than 31.2.2 is available: 33.1.1"
+        errorLine1="firebaseBom = &quot;31.2.2&quot;"
+        errorLine2="              ~~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="28"
+            column="15"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.firebase:firebase-bom than 31.2.2 is available: 33.1.1"
+        errorLine1="firebaseBom = &quot;31.2.2&quot;"
+        errorLine2="              ~~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="28"
+            column="15"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.0"
+        errorLine1="junitExt = &quot;1.1.5&quot;"
+        errorLine2="           ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="34"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.0"
+        errorLine1="junitExt = &quot;1.1.5&quot;"
+        errorLine2="           ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="34"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.0"
+        errorLine1="junitExt = &quot;1.1.5&quot;"
+        errorLine2="           ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="34"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of org.jetbrains.kotlin.android than 1.9.0 is available: 1.9.21"
+        errorLine1="kotlin = &quot;1.9.0&quot;"
+        errorLine2="         ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="35"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of org.jetbrains.kotlin.android than 1.9.0 is available: 1.9.21"
+        errorLine1="kotlin = &quot;1.9.0&quot;"
+        errorLine2="         ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="35"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of org.jetbrains.kotlin.android than 1.9.0 is available: 1.9.21"
+        errorLine1="kotlin = &quot;1.9.0&quot;"
+        errorLine2="         ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="35"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of org.jetbrains.kotlin:kotlin-stdlib-jdk7 than 1.9.0 is available: 1.9.21"
+        errorLine1="kotlin = &quot;1.9.0&quot;"
+        errorLine2="         ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="35"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of org.jetbrains.kotlin:kotlin-stdlib-jdk7 than 1.9.0 is available: 1.9.21"
+        errorLine1="kotlin = &quot;1.9.0&quot;"
+        errorLine2="         ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="35"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of org.jetbrains.kotlin:kotlin-stdlib-jdk7 than 1.9.0 is available: 1.9.21"
+        errorLine1="kotlin = &quot;1.9.0&quot;"
+        errorLine2="         ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="35"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of org.jetbrains.kotlin:kotlin-reflect than 1.8.10 is available: 1.9.22"
+        errorLine1="kotlinReflectVersion = &quot;1.8.10&quot;"
+        errorLine2="                       ~~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="37"
+            column="24"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of org.jetbrains.kotlin:kotlin-reflect than 1.8.10 is available: 1.9.22"
+        errorLine1="kotlinReflectVersion = &quot;1.8.10&quot;"
+        errorLine2="                       ~~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="37"
+            column="24"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of org.jetbrains.kotlin:kotlin-reflect than 1.8.10 is available: 1.9.22"
+        errorLine1="kotlinReflectVersion = &quot;1.8.10&quot;"
+        errorLine2="                       ~~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="37"
+            column="24"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.lifecycle:lifecycle-livedata-ktx than 2.6.1 is available: 2.8.2"
+        errorLine1="lifecycle = &quot;2.6.1&quot;"
+        errorLine2="            ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="38"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.lifecycle:lifecycle-livedata-ktx than 2.6.1 is available: 2.8.2"
+        errorLine1="lifecycle = &quot;2.6.1&quot;"
+        errorLine2="            ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="38"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.lifecycle:lifecycle-livedata-ktx than 2.6.1 is available: 2.8.2"
+        errorLine1="lifecycle = &quot;2.6.1&quot;"
+        errorLine2="            ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="38"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.6.1 is available: 2.8.2"
+        errorLine1="lifecycle = &quot;2.6.1&quot;"
+        errorLine2="            ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="38"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.6.1 is available: 2.8.2"
+        errorLine1="lifecycle = &quot;2.6.1&quot;"
+        errorLine2="            ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="38"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.6.1 is available: 2.8.2"
+        errorLine1="lifecycle = &quot;2.6.1&quot;"
+        errorLine2="            ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="38"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.lifecycle:lifecycle-viewmodel-ktx than 2.6.1 is available: 2.8.2"
+        errorLine1="lifecycle = &quot;2.6.1&quot;"
+        errorLine2="            ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="38"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.lifecycle:lifecycle-viewmodel-ktx than 2.6.1 is available: 2.8.2"
+        errorLine1="lifecycle = &quot;2.6.1&quot;"
+        errorLine2="            ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="38"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.lifecycle:lifecycle-viewmodel-ktx than 2.6.1 is available: 2.8.2"
+        errorLine1="lifecycle = &quot;2.6.1&quot;"
+        errorLine2="            ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="38"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.lifecycle:lifecycle-viewmodel-savedstate than 2.6.1 is available: 2.8.2"
+        errorLine1="lifecycle = &quot;2.6.1&quot;"
+        errorLine2="            ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="38"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.lifecycle:lifecycle-viewmodel-savedstate than 2.6.1 is available: 2.8.2"
+        errorLine1="lifecycle = &quot;2.6.1&quot;"
+        errorLine2="            ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="38"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.lifecycle:lifecycle-viewmodel-savedstate than 2.6.1 is available: 2.8.2"
+        errorLine1="lifecycle = &quot;2.6.1&quot;"
+        errorLine2="            ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="38"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.android.material:material than 1.9.0 is available: 1.12.0"
+        errorLine1="material = &quot;1.9.0&quot;"
+        errorLine2="           ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="40"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.android.material:material than 1.9.0 is available: 1.12.0"
+        errorLine1="material = &quot;1.9.0&quot;"
+        errorLine2="           ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="40"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.android.material:material than 1.9.0 is available: 1.12.0"
+        errorLine1="material = &quot;1.9.0&quot;"
+        errorLine2="           ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="40"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation.safeargs than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation.safeargs than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation.safeargs than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation.safeargs.kotlin than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation.safeargs.kotlin than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation.safeargs.kotlin than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-common-ktx than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-common-ktx than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-common-ktx than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-compose than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-compose than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-compose than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-dynamic-features-fragment than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-dynamic-features-fragment than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-dynamic-features-fragment than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-dynamic-features-runtime than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-dynamic-features-runtime than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-dynamic-features-runtime than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-fragment-ktx than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-fragment-ktx than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-fragment-ktx than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-safe-args-generator than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-safe-args-generator than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-safe-args-generator than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-safe-args-gradle-plugin than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-safe-args-gradle-plugin than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-safe-args-gradle-plugin than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-testing than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-testing than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-testing than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-ui-ktx than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-ui-ktx than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.navigation:navigation-ui-ktx than 2.5.3 is available: 2.7.7"
+        errorLine1="navigation = &quot;2.5.3&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="41"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.preference:preference-ktx than 1.2.0 is available: 1.2.1"
+        errorLine1="preference = &quot;1.2.0&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="44"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.preference:preference-ktx than 1.2.0 is available: 1.2.1"
+        errorLine1="preference = &quot;1.2.0&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="44"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.preference:preference-ktx than 1.2.0 is available: 1.2.1"
+        errorLine1="preference = &quot;1.2.0&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="44"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of io.reactivex.rxjava3:rxkotlin than 2.4.0 is available: 3.0.1"
+        errorLine1="rx2Kotlin = &quot;2.4.0&quot;"
+        errorLine2="            ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="51"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of io.reactivex.rxjava3:rxkotlin than 2.4.0 is available: 3.0.1"
+        errorLine1="rx2Kotlin = &quot;2.4.0&quot;"
+        errorLine2="            ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="51"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of io.reactivex.rxjava3:rxkotlin than 2.4.0 is available: 3.0.1"
+        errorLine1="rx2Kotlin = &quot;2.4.0&quot;"
+        errorLine2="            ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="51"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.viewpager2:viewpager2 than 1.0.0 is available: 1.1.0"
+        errorLine1="viewPager = &quot;1.0.0&quot;"
+        errorLine2="            ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="56"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.viewpager2:viewpager2 than 1.0.0 is available: 1.1.0"
+        errorLine1="viewPager = &quot;1.0.0&quot;"
+        errorLine2="            ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="56"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.viewpager2:viewpager2 than 1.0.0 is available: 1.1.0"
+        errorLine1="viewPager = &quot;1.0.0&quot;"
+        errorLine2="            ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="56"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.annotation:annotation than 1.6.0 is available: 1.8.0"
+        errorLine1="annotation = &quot;1.6.0&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="57"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.annotation:annotation than 1.6.0 is available: 1.8.0"
+        errorLine1="annotation = &quot;1.6.0&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="57"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.annotation:annotation than 1.6.0 is available: 1.8.0"
+        errorLine1="annotation = &quot;1.6.0&quot;"
+        errorLine2="             ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="57"
+            column="14"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.fragment:fragment-ktx than 1.5.7 is available: 1.8.0"
+        errorLine1="androidXFragment = &quot;1.5.7&quot;"
+        errorLine2="                   ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="58"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.fragment:fragment-ktx than 1.5.7 is available: 1.8.0"
+        errorLine1="androidXFragment = &quot;1.5.7&quot;"
+        errorLine2="                   ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="58"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.fragment:fragment-ktx than 1.5.7 is available: 1.8.0"
+        errorLine1="androidXFragment = &quot;1.5.7&quot;"
+        errorLine2="                   ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="58"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.paging:paging-common-ktx than 3.2.1 is available: 3.3.0"
+        errorLine1="pagingCommon = &quot;3.2.1&quot;"
+        errorLine2="               ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="60"
+            column="16"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.paging:paging-common-ktx than 3.2.1 is available: 3.3.0"
+        errorLine1="pagingCommon = &quot;3.2.1&quot;"
+        errorLine2="               ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="60"
+            column="16"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.paging:paging-common-ktx than 3.2.1 is available: 3.3.0"
+        errorLine1="pagingCommon = &quot;3.2.1&quot;"
+        errorLine2="               ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="60"
+            column="16"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.paging:paging-runtime-ktx than 3.2.1 is available: 3.3.0"
+        errorLine1="pagingCommon = &quot;3.2.1&quot;"
+        errorLine2="               ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="60"
+            column="16"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.paging:paging-runtime-ktx than 3.2.1 is available: 3.3.0"
+        errorLine1="pagingCommon = &quot;3.2.1&quot;"
+        errorLine2="               ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="60"
+            column="16"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.paging:paging-runtime-ktx than 3.2.1 is available: 3.3.0"
+        errorLine1="pagingCommon = &quot;3.2.1&quot;"
+        errorLine2="               ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="60"
+            column="16"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.paging:paging-rxjava2-ktx than 3.2.1 is available: 3.3.0"
+        errorLine1="pagingCommon = &quot;3.2.1&quot;"
+        errorLine2="               ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="60"
+            column="16"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.paging:paging-rxjava2-ktx than 3.2.1 is available: 3.3.0"
+        errorLine1="pagingCommon = &quot;3.2.1&quot;"
+        errorLine2="               ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="60"
+            column="16"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.paging:paging-rxjava2-ktx than 3.2.1 is available: 3.3.0"
+        errorLine1="pagingCommon = &quot;3.2.1&quot;"
+        errorLine2="               ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="60"
+            column="16"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.work:work-runtime-ktx than 2.7.1 is available: 2.9.0"
+        errorLine1="workmanager = &quot;2.7.1&quot;"
+        errorLine2="              ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="65"
+            column="15"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.work:work-runtime-ktx than 2.7.1 is available: 2.9.0"
+        errorLine1="workmanager = &quot;2.7.1&quot;"
+        errorLine2="              ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="65"
+            column="15"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.work:work-runtime-ktx than 2.7.1 is available: 2.9.0"
+        errorLine1="workmanager = &quot;2.7.1&quot;"
+        errorLine2="              ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="65"
+            column="15"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.lifecycle:lifecycle-livedata-ktx than 2.6.2 is available: 2.8.2"
+        errorLine1="lifecycle-livedata-ktx = &quot;2.6.2&quot;"
+        errorLine2="                         ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="67"
+            column="26"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.lifecycle:lifecycle-livedata-ktx than 2.6.2 is available: 2.8.2"
+        errorLine1="lifecycle-livedata-ktx = &quot;2.6.2&quot;"
+        errorLine2="                         ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="67"
+            column="26"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.lifecycle:lifecycle-livedata-ktx than 2.6.2 is available: 2.8.2"
+        errorLine1="lifecycle-livedata-ktx = &quot;2.6.2&quot;"
+        errorLine2="                         ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="67"
+            column="26"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.activity:activity than 1.8.0 is available: 1.9.0"
+        errorLine1="activity = &quot;1.8.0&quot;"
+        errorLine2="           ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="69"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.activity:activity than 1.8.0 is available: 1.9.0"
+        errorLine1="activity = &quot;1.8.0&quot;"
+        errorLine2="           ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="69"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.activity:activity than 1.8.0 is available: 1.9.0"
+        errorLine1="activity = &quot;1.8.0&quot;"
+        errorLine2="           ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="69"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.webkit:webkit than 1.7.0 is available: 1.11.0"
+        errorLine1="androidx-webkit = { group = &quot;androidx.webkit&quot;, name = &quot;webkit&quot;, version = &quot;1.7.0&quot; }"
+        errorLine2="                                                                          ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="106"
+            column="75"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.webkit:webkit than 1.7.0 is available: 1.11.0"
+        errorLine1="androidx-webkit = { group = &quot;androidx.webkit&quot;, name = &quot;webkit&quot;, version = &quot;1.7.0&quot; }"
+        errorLine2="                                                                          ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="106"
+            column="75"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of androidx.webkit:webkit than 1.7.0 is available: 1.11.0"
+        errorLine1="androidx-webkit = { group = &quot;androidx.webkit&quot;, name = &quot;webkit&quot;, version = &quot;1.7.0&quot; }"
+        errorLine2="                                                                          ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="106"
+            column="75"/>
+    </issue>
+
+    <issue
+        id="RiskyLibrary"
+        message="[Prevents app release in Google Play Console] com.google.android.play:core version 1.10.3 has been reported as problematic by its author and will block publishing of your app to Play Console"
+        errorLine1="googlePlayCore = &quot;1.10.3&quot;"
+        errorLine2="                 ~~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="17"
+            column="18"/>
+    </issue>
+
+    <issue
+        id="RiskyLibrary"
+        message="[Prevents app release in Google Play Console] com.google.android.play:core version 1.10.3 has been reported as problematic by its author and will block publishing of your app to Play Console"
+        errorLine1="googlePlayCore = &quot;1.10.3&quot;"
+        errorLine2="                 ~~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="17"
+            column="18"/>
+    </issue>
+
+    <issue
+        id="RiskyLibrary"
+        message="[Prevents app release in Google Play Console] com.google.android.play:core version 1.10.3 has been reported as problematic by its author and will block publishing of your app to Play Console"
+        errorLine1="googlePlayCore = &quot;1.10.3&quot;"
+        errorLine2="                 ~~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="17"
+            column="18"/>
+    </issue>
+
+    <issue
+        id="RiskyLibrary"
+        message="[Prevents app release in Google Play Console] com.google.android.play:feature-delivery-ktx version 2.0.1 has been reported as problematic by its author and will block publishing of your app to Play Console"
+        errorLine1="googlePlayDelivery = &quot;2.0.1&quot;"
+        errorLine2="                     ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="20"
+            column="22"/>
+    </issue>
+
+    <issue
+        id="RiskyLibrary"
+        message="[Prevents app release in Google Play Console] com.google.android.play:feature-delivery-ktx version 2.0.1 has been reported as problematic by its author and will block publishing of your app to Play Console"
+        errorLine1="googlePlayDelivery = &quot;2.0.1&quot;"
+        errorLine2="                     ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="20"
+            column="22"/>
+    </issue>
+
+    <issue
+        id="RiskyLibrary"
+        message="[Prevents app release in Google Play Console] com.google.android.play:feature-delivery-ktx version 2.0.1 has been reported as problematic by its author and will block publishing of your app to Play Console"
+        errorLine1="googlePlayDelivery = &quot;2.0.1&quot;"
+        errorLine2="                     ~~~~~~~">
+        <location
+            file="$HOME/Downloads/starter-project-xml/gradle/libs.versions.toml"
+            line="20"
+            column="22"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.background_white` appears to be unused"
+        errorLine1="    &lt;color name=&quot;background_white&quot;>#FFFFFFFF&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="8"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.background_dark` appears to be unused"
+        errorLine1="    &lt;color name=&quot;background_dark&quot;>#FF000000&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="9"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.background_item_dark` appears to be unused"
+        errorLine1="    &lt;color name=&quot;background_item_dark&quot;>#FFF4F4F4&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/colors.xml"
+            line="12"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.navigation.favorite_nav_graph` appears to be unused"
+        errorLine1="&lt;navigation xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2="^">
+        <location
+            file="${:favorite*debug*MAIN*sourceProvider*0*resDir*0}/navigation/favorite_nav_graph.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.ic_magnifier` appears to be unused"
+        errorLine1="&lt;vector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; android:height=&quot;24dp&quot; android:tint=&quot;#D7D7D7&quot; android:viewportHeight=&quot;24&quot; android:viewportWidth=&quot;24&quot; android:width=&quot;24dp&quot;>"
+        errorLine2="^">
+        <location
+            file="src/main/res/drawable/ic_magnifier.xml"
+            line="1"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.ic_menu_settings` appears to be unused"
+        errorLine1="&lt;vector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2="^">
+        <location
+            file="src/main/res/drawable/ic_menu_settings.xml"
+            line="1"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.menu.menu_toolbar` appears to be unused"
+        errorLine1="&lt;menu xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2="^">
+        <location
+            file="src/main/res/menu/menu_toolbar.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.style.searchBar` appears to be unused"
+        errorLine1="    &lt;style name=&quot;searchBar&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/styles.xml"
+            line="31"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.style.searchBar_Text` appears to be unused"
+        errorLine1="    &lt;style name=&quot;searchBar.Text&quot; parent=&quot;Widget.AppCompat.SearchView&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/styles.xml"
+            line="47"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.style.CardView` appears to be unused"
+        errorLine1="    &lt;style name=&quot;CardView&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values-night/themes.xml"
+            line="13"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="TypographyEllipsis"
+        message="Replace &quot;...&quot; with ellipsis character (…, &amp;#8230;) ?"
+        errorLine1="    &lt;string name=&quot;popup_label_please_waiting&quot;>Mohon tunggu...&lt;/string>"
+        errorLine2="                                              ~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/strings.xml"
+            line="4"
+            column="47"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/ill_thumbnail_empty.png` in densityless folder">
+        <location
+            file="src/main/res/drawable/ill_thumbnail_empty.png"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead (com.google.android.play:feature-delivery-ktx is already available as `google-play-delivery-ktx`, but using version 2.0.1 instead)"
+        errorLine1="    api(&quot;com.google.android.play:feature-delivery-ktx:2.1.0&quot;)"
+        errorLine2="         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="94"
+            column="10"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1="    testImplementation(&quot;org.mockito:mockito-core:4.4.0&quot;)"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="104"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="UseTomlInstead"
+        message="Use version catalog instead"
+        errorLine1="    testImplementation(&quot;org.mockito:mockito-inline:4.4.0&quot;)"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle.kts"
+            line="105"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="                    txtGenre.text = &quot;Action&quot;"
+        errorLine2="                                     ~~~~~~">
+        <location
+            file="src/main/java/com/papero/capstoneexpert/presentation/home/NowPlayingViewHolder.kt"
+            line="23"
+            column="38"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="String literal in `setText` can not be translated. Use Android resources instead."
+        errorLine1="                    txtGenre.text = &quot;Action&quot;"
+        errorLine2="                                     ~~~~~~">
+        <location
+            file="src/main/java/com/papero/capstoneexpert/presentation/home/NowPlayingViewHolder.kt"
+            line="31"
+            column="38"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Movie&quot;, should use `@string` resource"
+        errorLine1="        android:title=&quot;Movie&quot;/>"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/menu/bottom_nav_menu.xml"
+            line="7"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Favorite&quot;, should use `@string` resource"
+        errorLine1="        android:title=&quot;Favorite&quot;/>"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/menu/bottom_nav_menu.xml"
+            line="12"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Popularitas&quot;, should use `@string` resource"
+        errorLine1="                    android:text=&quot;Popularitas&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_detail.xml"
+            line="128"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Tanggal rilis&quot;, should use `@string` resource"
+        errorLine1="                    android:text=&quot;Tanggal rilis&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_detail.xml"
+            line="153"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Informasi laman&quot;, should use `@string` resource"
+        errorLine1="                    android:text=&quot;Informasi laman&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_detail.xml"
+            line="178"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;:&quot;, should use `@string` resource"
+        errorLine1="                    android:text=&quot;:&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_detail.xml"
+            line="188"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;:&quot;, should use `@string` resource"
+        errorLine1="                    android:text=&quot;:&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_detail.xml"
+            line="198"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;:&quot;, should use `@string` resource"
+        errorLine1="                    android:text=&quot;:&quot;"
+        errorLine2="                    ~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_detail.xml"
+            line="209"
+            column="21"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Sukai&quot;, should use `@string` resource"
+        errorLine1="        android:contentDescription=&quot;Sukai&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/fragment_detail.xml"
+            line="251"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Pengaturan&quot;, should use `@string` resource"
+        errorLine1="        android:title=&quot;Pengaturan&quot;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/menu/menu_toolbar.xml"
+            line="6"
+            column="9"/>
+    </issue>
+
+</issues>
